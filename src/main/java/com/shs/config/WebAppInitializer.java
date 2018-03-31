@@ -1,13 +1,13 @@
-package com.elennaro.sshwa.config;
+package com.shs.config;
 
-import com.elennaro.sshwa.config.application.WebConfig;
+import com.shs.config.application.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] {WebConfig.class}; // We dont need any special servlet config yet.
+		return new Class[] {WebConfig.class};
 	}
 
 	@Override

@@ -1,16 +1,20 @@
 package com.shs.entity;
 
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name=("ITEM_TYPE"))
-/*@NamedQueries({
-        @NamedQuery(name = ItemType.ALL_INVOICE_QUERY,
-                query = "SELECT e FROM ITEM_TYPE e"),
-        @NamedQuery(name = ItemType.INVOICE_QUERY,
-                query = "SELECT e FROM ITEM_TYPE e WHERE e.id = :id")
-})*/
 public class ItemType {
+
+    /**  */
+   // public static final String ITEM_TYPE_QUERY = "ItemType.getInvoice";
+
+    /** Запрос получения всех накладных. */
+   // public static final String ALL_ITEM_TYPE_QUERY = "ItemType.getAllInvoices";
 
     @Id
     @Column(name = "ID")

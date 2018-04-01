@@ -7,8 +7,8 @@ import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"com.shs.config.authorization", "com.shs.controllers",  "com.shs.dao" , "com.shs.service"})
-//@ImportResource("classpath:dao.xml")
+@ComponentScan({"com.shs.config.authorization", "com.shs.controllers",  "com.shs.service" , "com.shs.dao" })
+@ImportResource("classpath:spring/dao.xml")
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

@@ -1,6 +1,6 @@
 package com.shs.service;
 
-import com.shs.entity.event.Item;
+import com.shs.entity.Item;
 
 import java.util.List;
 

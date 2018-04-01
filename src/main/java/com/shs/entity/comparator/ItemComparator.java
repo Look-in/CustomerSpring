@@ -1,7 +1,7 @@
 package com.shs.entity.comparator;
 
 import com.shs.entity.event.AttributeToCompare;
-import com.shs.entity.event.Item;
+import com.shs.entity.Item;
 import java.util.Collections;
 import java.util.List;
 

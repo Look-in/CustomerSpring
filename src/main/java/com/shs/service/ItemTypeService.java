@@ -10,8 +10,4 @@ public interface ItemTypeService {
     List<ItemType> getItemTypes();
 
     ItemType getItemType(int itemTypeId);
-
-    List<ItemStatus> readItemStatuses();
-
-    ItemStatus readItemStatus(int itemStatusId);
 }

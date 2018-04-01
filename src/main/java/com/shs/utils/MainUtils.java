@@ -1,6 +1,6 @@
 package com.shs.utils;
 
-import com.shs.entity.event.Item;
+import com.shs.entity.Item;
 import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Field;

@@ -1,7 +1,5 @@
 package com.shs.entity;
 
-import com.shs.entity.event.Item;
-
 import java.util.List;
 import java.util.Date;
 

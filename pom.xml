@@ -13,6 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring-framework-version>5.0.4.RELEASE</spring-framework-version>
 		<spring-security-version>5.0.3.RELEASE</spring-security-version>
+		<hibernate-version>5.2.16.Final</hibernate-version>
 	</properties>
     
 	<dependencies>
@@ -50,6 +51,11 @@
 			<artifactId>spring-web</artifactId>
 			<version>${spring-framework-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-framework-version}</version>
+		</dependency>
 		<!-- Add Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -76,6 +82,18 @@
 			<groupId>org.apache.taglibs</groupId>
 			<artifactId>taglibs-standard-jstlel</artifactId>
 			<version>1.2.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${hibernate-version}</version>
+		</dependency>
+		<!-- IN MEMORY Database and JDBC Driver -->
+		<dependency>
+			<groupId>hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>1.8.0.7</version>
 		</dependency>
 	</dependencies>
 

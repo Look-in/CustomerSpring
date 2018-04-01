@@ -1,7 +1,5 @@
 package com.shs.entity;
 
-import com.shs.entity.event.Item;
-
 public class Clothes extends Item {
 
     private String season;

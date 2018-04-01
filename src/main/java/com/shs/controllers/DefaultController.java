@@ -3,7 +3,6 @@
  * Redirection to view-item controller as the start page
  * and also redirection after logging in
  */
-
 package com.shs.controllers;
 
 import org.springframework.stereotype.Controller;

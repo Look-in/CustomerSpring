@@ -2,6 +2,7 @@ package com.shs.controllers;
 
 import com.shs.entity.Clothes;
 import com.shs.entity.ItemStatus;
+import com.shs.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -9,10 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import com.shs.service.ItemGeneration;
-import com.shs.service.ItemTypeService;
-import com.shs.service.PushItem;
-import com.shs.service.SupplyService;
 
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class ViewClothesModify {
     private SupplyService supplyService;
 
     @Autowired
-    private ItemTypeService itemType;
+    private ItemStatusService itemStatus;
 
     @Autowired
     private PushItem pushItem;
@@ -44,7 +41,7 @@ public class ViewClothesModify {
 
     @ModelAttribute(value = "statuses")
     public List<ItemStatus> newRequest() {
-        return itemType.readItemStatuses();
+        return itemStatus.readItemStatuses();
     }
 
     @RequestMapping(method = RequestMethod.GET)

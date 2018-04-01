@@ -2,7 +2,7 @@ package com.shs.service;
 
 import com.shs.entity.Bicycle;
 import com.shs.entity.Clothes;
-import com.shs.entity.event.Item;
+import com.shs.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +11,9 @@ public class ItemGenerationImpl implements ItemGeneration {
 
     @Autowired
     private ItemTypeService itemTypeService;
+
+    @Autowired
+    private ItemStatusService itemStatusService;
 
     @Override
     public Clothes getNewClothes() {
@@ -34,7 +37,7 @@ public class ItemGenerationImpl implements ItemGeneration {
     }
 
     private void setDefaultItemAttributes(Item item) {
-        item.setItemStatus(itemTypeService.readItemStatus(1));
+        item.setItemStatus(itemStatusService.readItemStatus(1));
         int itemType=1;
         if (item instanceof Clothes) {
             itemType=1;

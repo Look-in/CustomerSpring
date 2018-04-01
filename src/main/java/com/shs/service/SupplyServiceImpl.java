@@ -1,10 +1,10 @@
 package com.shs.service;
 
-import com.shs.dao.ReadItem;
-import com.shs.dao.ReadListItems;
+import com.shs.dao.supply.ReadItem;
+import com.shs.dao.supply.ReadListItems;
 import com.shs.entity.Bicycle;
 import com.shs.entity.Clothes;
-import com.shs.entity.event.Item;
+import com.shs.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

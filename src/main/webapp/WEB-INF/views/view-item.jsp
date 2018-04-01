@@ -21,7 +21,6 @@
     <div class="sort-item">
         <div class="add-item">
             <form name="selecting" method="get">
-                <input type="hidden" name="action" value="list">
                 <input type="hidden" name="itemTypeId" value="${ param.itemTypeId }">
                 <select name="sortingBy">
                     <option value="" selected>Sort by</option>
@@ -47,13 +46,11 @@
     </div>
     <div>
         <c:url var="view" value="view-item">
-            <c:param name="action" value="list"/>
             <c:param name="sortingBy" value="${param.sortingBy}"/>
         </c:url>
         <a href="${view}" title="">ALL</a>
         <c:forEach var="itemType" items="${itemTypes}">
             <c:url var="view" value="view-item">
-                <c:param name="action" value="list"/>
                 <c:param name="itemTypeId" value="${itemType.itemTypeId}"/>
                 <c:param name="sortingBy" value="${param.sortingBy}"/>
             </c:url>

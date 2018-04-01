@@ -1,9 +1,9 @@
 package com.shs.service;
 
-import com.shs.dao.ChangeInstance;
+import com.shs.dao.supply.ChangeInstance;
 import com.shs.entity.Bicycle;
 import com.shs.entity.Clothes;
-import com.shs.entity.event.Item;
+import com.shs.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

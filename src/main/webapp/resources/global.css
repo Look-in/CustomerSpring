@@ -1,8 +1,11 @@
 @CHARSET "UTF-8";
 
-/*-----Global-----*/
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700italic);
-* { padding: 0; margin: 0; }
+
+* {
+    padding: 0;
+    margin: 0;
+}
 
 body {
     background: #dddddd url(http://elitefon.ru/large/201211/24123.jpg);
@@ -11,7 +14,6 @@ body {
 }
 
 header {
-/*    background: #1abc9c;*/
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -23,9 +25,14 @@ header {
     color: #2b2b2b;
     text-shadow: 0 1px 0 #fff;
 }
+
 header h1,
-header nav {
+header div {
     display: inline-block;
+}
+
+header div {
+    float: right;
 }
 
 header::after {
@@ -34,7 +41,7 @@ header::after {
     width: 100%;
 }
 
-header nav .user-form {
+header div .user-form {
     padding: 0 0.6em;
     white-space: nowrap;
     color: #2b2b2b;
@@ -42,25 +49,11 @@ header nav .user-form {
     text-decoration: none;
 }
 
-
-.logout {
-    height: 20px;
-    font: bold 11px Arial;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #333333;
-    padding: 2px 6px 2px 6px;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #CCCCCC;
-    font-family: "Verdana" sans-serif;
-    font-size: 1em;
-    text-align: left;
-    color: blue;
-    background: none;
-    margin: 0;
-    padding: 0;
+div .logout {
+    background: none !important;
     border: none;
+    /*padding:0!important;*/
+    font: inherit;
     cursor: pointer;
+    text-shadow: 0 1px 0 #fff;
 }

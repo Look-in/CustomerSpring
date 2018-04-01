@@ -1,8 +1,6 @@
 package com.shs.entity;
 
 
-import com.shs.entity.event.Item;
-
 public class Bicycle extends Item {
     private String fork;
     private String brakes;

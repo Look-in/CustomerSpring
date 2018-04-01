@@ -17,7 +17,6 @@
 </head>
 <body>
 <%@include file="includes/header.jsp" %>
-<c:url var="logoutUrl" value="/logout"/>
 <div>
     <div class="sort-item">
         <div class="add-item">
@@ -70,20 +69,23 @@
                      <c:out value="${ elem.itemStatus.status }"/><br>
                      <c:out value="${ elem.name }"/><br>
                      <strong><c:out value="${ elem.price }"/>$</strong>
-                </span>
+            </span>
                 <sec:authorize access="hasRole('ADMIN')">
-                    <c:url var="editurl" value="${param.itemTypeId == 1 ? 'viewclothesmodify' : 'viewbicyclemodify'}">
-                        <c:param name="itemId" value="${elem.itemId}"/>
-                        <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
-                    </c:url>
-                    <a class="item edit" ${ empty param.itemTypeId ? 'hidden="true"' : '' } href="${editurl}">Edit</a>
-                    <form:form class="item delete" method="DELETE" name="Modify"
-                               action="${param.itemTypeId == 1 ? 'viewclothesmodify/delete' : 'viewbicyclemodify/delete'}">
-                        <input type="hidden" name="itemTypeId" value="${ param.itemTypeId }">
-                        <input type="hidden" name="itemId" value="${elem.itemId}">
-                        <input class="btn-delete" ${ empty param.itemTypeId ? 'hidden="true"' : '' } type="submit"
-                               value="Delete"/>
-                    </form:form>
+                    <div class="item edit" ${ empty param.itemTypeId ? 'hidden="true"' : '' }>
+                        <c:url var="editurl" value="${param.itemTypeId == 1 ? 'viewclothesmodify' : 'viewbicyclemodify'}">
+                            <c:param name="itemId" value="${elem.itemId}"/>
+                            <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
+                        </c:url>
+                        <a href="${editurl}">Edit</a>
+                    </div>
+                    <div class="item delete"  ${ empty param.itemTypeId ? 'hidden="true"' : '' }>
+                        <form:form method="DELETE" name="Modify"
+                                   action="${param.itemTypeId == 1 ? 'viewclothesmodify/delete' : 'viewbicyclemodify/delete'}">
+                            <input type="hidden" name="itemTypeId" value="${ param.itemTypeId }">
+                            <input type="hidden" name="itemId" value="${elem.itemId}">
+                            <input class="btn-delete" type="submit" value="Delete"/>
+                        </form:form>
+                    </div>
                 </sec:authorize>
             </div>
         </c:forEach>

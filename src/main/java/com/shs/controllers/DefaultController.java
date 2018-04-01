@@ -1,6 +1,6 @@
 /**
  * @author Serg Shankunas <shserg2012@gmail.com>
- * Used to redirecting to view-item.jsp as the start page
+ * Redirection to view-item controller as the start page
  * and also redirection after logging in
  */
 
@@ -15,6 +15,6 @@ public class DefaultController {
 
     @RequestMapping(value = {"/", "/login**"}, method = {RequestMethod.GET})
     public String viewPage() {
-        return "view-item";
+        return "redirect:/view-item";
     }
 }

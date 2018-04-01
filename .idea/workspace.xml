@@ -16,7 +16,70 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="view-item.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view-item.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="900">
+              <caret line="74" column="45" lean-forward="false" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compiler.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewBicycleModify.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewBicycleModify.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/DefaultController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="item.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/item.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="90" column="19" lean-forward="false" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/global.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,7 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/shs/dao/ReadItemTypeDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/dao/ReadListItems.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/jdbc/JdbcConnect.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/service/ItemGeneration.java" />
@@ -74,19 +136,16 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/loginaccess.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/loginaccess.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/global.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/LoginAccess.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/header.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/viewbicyclemodify.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view-item.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/AppController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/config/application/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/config/SecurityInit.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewListItems.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewClothesModify.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewBicycleModify.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/DefaultController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/config/AppSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/entity/ItemStatus.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/entity/ItemType.java" />
@@ -94,6 +153,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/shs/service/SupplyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/service/SupplyServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/shs/dao/ClothesDao.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/global.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/item.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view-item.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/shs/controllers/DefaultController.java" />
       </list>
     </option>
   </component>
@@ -125,7 +188,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="1" />
-    <option name="width" value="1920" />
+    <option name="width" value="1700" />
     <option name="height" value="1049" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -144,8 +207,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,12 +246,54 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="shs" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerSpring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="shs" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerSpring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerSpring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerSpring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="customer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CustomerSpring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,14 +516,16 @@
       <workItem from="1522483303489" duration="13720000" />
       <workItem from="1522516554489" duration="4374000" />
       <workItem from="1522522805951" duration="160000" />
+      <workItem from="1522563155109" duration="2355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25780000" />
+    <option name="totallyTimeSpent" value="28135000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="1" width="1920" height="1049" extended-state="0" />
+    <frame x="-8" y="1" width="1700" height="1049" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -438,11 +544,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36926362" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36926362" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25210086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25178146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -472,7 +578,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/dao/ReadBicycleDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/dao/ReadItemTypeDaoImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/dao/ReadItemImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/jdbc/JdbcConnect.java" />
@@ -510,13 +615,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-context.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/customer.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -524,23 +623,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="150">
-            <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/helloworld.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/viewclothesmodify.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/protected.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/protected.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/item.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/global.css" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/LoginAccess.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/includes/header.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/viewbicyclemodify.jsp" />
@@ -558,8 +646,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/config/AppSecurityConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/config/application/WebConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/config/WebAppInitializer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/DefaultController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewBicycleModify.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewListItems.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/entity/ItemStatus.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/entity/Order.java" />
@@ -580,8 +666,57 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/service/SupplyServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/utils/MainUtils.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/utils/SetException.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view-item.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/dao/ClothesDao.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/item.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="90" column="19" lean-forward="false" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view-item.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="74" column="45" lean-forward="false" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/ViewBicycleModify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/shs/controllers/DefaultController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="40" lean-forward="true" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

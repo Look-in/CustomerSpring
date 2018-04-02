@@ -140,10 +140,6 @@ INSERT INTO ORDER_ITEM(ORDER_ID,ITEM_ID) values (4,1);
 INSERT INTO ORDER_ITEM(ORDER_ID,ITEM_ID) values (4,2);
 INSERT INTO ORDER_ITEM(ORDER_ID,ITEM_ID) values (4,2);
 
-ALTER TABLE ITEM ADD COLUMN img LONGBLOB;
-
-update item set IMG=LOAD_FILE('d:/projects/arx/images/t-shirt.jpg') WHERE ID=1;
-update item set IMG=LOAD_FILE('d:/projects/arx/images/dress.jpg') WHERE ID=2;
 
 CREATE TABLE CLOTHES( 
                                       ID INT PRIMARY KEY, 
@@ -204,4 +200,7 @@ SELECT orders.ORDERID,customers.NAME,DATE_OPEN,order_item.itemid,price,items.nam
                                  WHERE orders.ORDERID=1 
                                  order by items.PRICE;
 
+ALTER TABLE ITEM ADD COLUMN img LONGBLOB;
 
+update item set IMG=LOAD_FILE('d:/projects/arx/images/t-shirt.jpg') WHERE ID=1;
+update item set IMG=LOAD_FILE('d:/projects/arx/images/dress.jpg') WHERE ID=2;

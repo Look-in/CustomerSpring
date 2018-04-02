@@ -10,5 +10,4 @@ public interface ItemGeneration {
 
     Bicycle getNewBicycle();
 
-    Item getNewItem();
 }

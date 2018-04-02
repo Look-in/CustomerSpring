@@ -29,13 +29,6 @@ public class ItemGenerationImpl implements ItemGeneration {
         return bicycle;
     }
 
-    @Override
-    public Item getNewItem() {
-        Item item = new Item();
-        setDefaultItemAttributes(item);
-        return item;
-    }
-
     private void setDefaultItemAttributes(Item item) {
         item.setItemStatus(itemStatusService.readItemStatus(1));
         int itemType=1;

@@ -22,7 +22,9 @@ public class ItemJpaDao extends BaseJpaDao implements ReadItem, ReadListItems, C
     public List<Item> readListItem(int itemType) {
         List<Item> items;
         if (itemType == 0) {
-            items = getEntityManager().createNamedQuery(Item.ALL_ITEM_QUERY).getResultList();
+            //items = getEntityManager().createNamedQuery(Item.ALL_ITEM_QUERY).getResultList();
+            items = getEntityManager().createQuery(" select e from Bicycle e").getResultList();
+            items.addAll(getEntityManager().createQuery(" select e from Clothes e").getResultList());
         } else {
             items = getEntityManager().createNamedQuery(Item.ITEM_QUERY)
                     .setParameter("id", itemType).getResultList();

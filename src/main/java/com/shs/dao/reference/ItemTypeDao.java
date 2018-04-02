@@ -1,6 +1,6 @@
 package com.shs.dao.reference;
 
-import com.shs.entity.ItemType;
+import com.shs.entity.reference.ItemType;
 
 import java.util.List;
 

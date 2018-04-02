@@ -66,6 +66,14 @@ CREATE TABLE ORDER_PROCESSING_TIME(
                                                  REFERENCES ORDER_STATUS (ID)
                                                    ON DELETE CASCADE,
                                          UNIQUE KEY NDX_ORDER_TIME (ORDER_ID,ORDER_STATUS_ID));
+
+CREATE TABLE ITEM_TYPE (
+                                               ID INT PRIMARY KEY, 
+                                               ITEM_TYPE VARCHAR(100)NOT NULL UNIQUE);
+
+INSERT INTO ITEM_TYPE(ID, ITEM_TYPE) VALUES (1, "CLOTHES");
+INSERT INTO ITEM_TYPE(ID, ITEM_TYPE) VALUES (2, "BICYCLE");
+
 SET foreign_key_checks = 1;
 
 CREATE TRIGGER ` AFTER_INSERT_ORDERS` AFTER INSERT ON `orders`
@@ -151,13 +159,6 @@ INSERT INTO CLOTHES(ID,SEASON) VALUES (4,"SUMMER");
 INSERT INTO CLOTHES(ID,SEASON) VALUES (5,"SUMMER");
 INSERT INTO CLOTHES(ID,SEASON) VALUES (6,"SUMMER");
 
-CREATE TABLE ITEM_TYPE (
-                                               ID INT PRIMARY KEY AUTO_INCREMENT, 
-                                               ITEM_TYPE VARCHAR(100)NOT NULL UNIQUE);
-
-INSERT INTO ITEM_TYPE(ITEM_TYPE) VALUES ("CLOTHES");
-INSERT INTO ITEM_TYPE(ITEM_TYPE) VALUES ("BICYCLE");
-
 ALTER TABLE ITEM ADD COLUMN ITEM_TYPE_ID INT, ADD CONSTRAINT FOREIGN KEY(ITEM_TYPE_ID) REFERENCES ITEM_TYPE(ID); 
 
 update item set ITEM_TYPE_ID=1;
@@ -169,6 +170,26 @@ CREATE TABLE BICYCLE(ID INT PRIMARY KEY,
                         FOREIGN KEY (ID)
                           REFERENCES ITEM (ID)
                             ON DELETE CASCADE);
+
+CREATE  TABLE users (username VARCHAR(15) NOT NULL PRIMARY KEY,
+                     password VARCHAR(15) NOT NULL ,
+                     enabled TINYINT NOT NULL DEFAULT 1);
+
+CREATE TABLE user_roles ( user_role_id int(11) NOT NULL AUTO_INCREMENT,
+                          username varchar(15) NOT NULL,
+                          role varchar(15) NOT NULL,
+                          PRIMARY KEY (user_role_id),
+                          UNIQUE KEY uni_username_role (role,username),
+                          KEY fk_username_idx (username),
+                          CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username));
+
+INSERT INTO users(username,password,enabled) VALUES ('user','user', true);
+INSERT INTO users(username,password,enabled) VALUES ('admin','admin', true);
+INSERT INTO users(username,password,enabled) VALUES ('manager','manager', true);
+
+INSERT INTO user_roles (username, role) VALUES ('user', 'ROLE_USER');
+INSERT INTO user_roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
+INSERT INTO user_roles (username, role) VALUES ('manager', 'ROLE_MANAGER');
 
 
 SELECT orders.ORDERID,customers.NAME,DATE_OPEN,order_item.itemid,price,items.name,status FROM ((

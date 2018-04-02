@@ -1,7 +1,6 @@
 package com.shs.service;
 
-import com.shs.entity.ItemStatus;
-import com.shs.entity.ItemType;
+import com.shs.entity.reference.ItemType;
 
 import java.util.List;
 

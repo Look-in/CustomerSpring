@@ -1,5 +1,8 @@
 package com.shs.entity;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Clothes extends Item {
 
     private String season;

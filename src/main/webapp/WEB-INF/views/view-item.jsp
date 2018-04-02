@@ -33,7 +33,7 @@
         </div>
         <sec:authorize access="hasRole('ADMIN')">
             <div class="add-item">
-                <c:url var="addurl" value="${param.itemTypeId == 1 ? 'viewclothesmodify' : 'viewbicyclemodify'}">
+                <c:url var="addurl" value="${param.itemTypeId == 1 ? 'view-clothes-modify' : 'view-bicycle-modify'}">
                     <c:param name="action" value="ADD"/>
                     <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
                 </c:url>
@@ -69,7 +69,7 @@
             </span>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div class="item edit" ${ empty param.itemTypeId ? 'hidden="true"' : '' }>
-                        <c:url var="editurl" value="${param.itemTypeId == 1 ? 'viewclothesmodify' : 'viewbicyclemodify'}">
+                        <c:url var="editurl" value="${param.itemTypeId == 1 ? 'view-clothes-modify' : 'view-bicycle-modify'}">
                             <c:param name="itemId" value="${elem.itemId}"/>
                             <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
                         </c:url>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="item delete"  ${ empty param.itemTypeId ? 'hidden="true"' : '' }>
                         <form:form method="DELETE" name="Modify"
-                                   action="${param.itemTypeId == 1 ? 'viewclothesmodify/delete' : 'viewbicyclemodify/delete'}">
+                                   action="${param.itemTypeId == 1 ? 'view-clothes-modify/delete' : 'view-bicycle-modify/delete'}">
                             <input type="hidden" name="itemTypeId" value="${ param.itemTypeId }">
                             <input type="hidden" name="itemId" value="${elem.itemId}">
                             <input class="btn-delete" type="submit" value="Delete"/>

@@ -1,6 +1,6 @@
 package com.shs.dao.reference;
 
-import com.shs.entity.ItemStatus;
+import com.shs.entity.reference.ItemStatus;
 
 import java.util.List;
 

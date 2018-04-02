@@ -1,4 +1,8 @@
+/**
+ * Register SpringSecurityFilterChain Filter
+ */
 package com.shs.config.authorization;
+
 
 import com.shs.config.web.WebConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

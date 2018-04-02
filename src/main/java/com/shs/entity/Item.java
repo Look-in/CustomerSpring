@@ -1,31 +1,44 @@
 package com.shs.entity;
 
-
+import com.shs.entity.reference.ItemStatus;
 import com.shs.utils.SetException;
-import com.shs.entity.ItemStatus;
-import com.shs.entity.ItemType;
-import sun.misc.BASE64Encoder;
+import com.shs.entity.reference.ItemType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@NamedQueries({
+        @NamedQuery(name = Item.ALL_ITEM_QUERY,
+                query = "select e from Item e"),
+        @NamedQuery(name = Item.ITEM_QUERY,
+                query = "select e from Item e WHERE e.itemType.itemTypeId = :id")
+})
 public class Item {
+
+    public static final String ITEM_QUERY = "Item.getItem";
+
+    public static final String ALL_ITEM_QUERY = "Item.getAllItems";
 
     @Id
     @Column(name = "ID")
     private int itemId;
 
+    @Column
     private Integer price;
 
+    @Column
     private String name;
 
+    @Column
     private String description;
 
-    private byte[] image;
-
+    @ManyToOne
+    @JoinColumn(name="item_status_id")
     private ItemStatus itemStatus;
 
+    @ManyToOne
+    @JoinColumn(name="item_type_id")
     private ItemType itemType;
 
     public Item(Integer itemId, Integer price, String name, String description, ItemStatus itemStatus, ItemType itemType) {
@@ -89,25 +102,6 @@ public class Item {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    // encoding the byte image string
-    //удалить после отладки, если будет реализован иной метод
-    public String getBase64imageFile() {
-        BASE64Encoder base64Encoder = new BASE64Encoder();
-        StringBuilder imageString = new StringBuilder();
-        imageString.append("data:image/png;base64,");
-        imageString.append(base64Encoder.encode(image));
-        return imageString.toString();
-    }
-
 
     @Override
     public String toString() {

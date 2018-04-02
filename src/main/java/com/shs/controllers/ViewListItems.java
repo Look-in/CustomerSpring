@@ -1,6 +1,6 @@
 package com.shs.controllers;
 
-import com.shs.entity.ItemType;
+import com.shs.entity.reference.ItemType;
 import com.shs.entity.comparator.ItemComparator;
 import com.shs.entity.event.AttributeToCompare;
 import com.shs.entity.Item;

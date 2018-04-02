@@ -15,19 +15,19 @@ import java.util.List;
 public class SupplyServiceImpl implements SupplyService {
 
     @Autowired
-    @Qualifier("ReadDefaultItem")
+    @Qualifier("ItemDao")
     private ReadListItems readItems;
 
     @Autowired
-    @Qualifier("ReadClothes")
+    @Qualifier("ClothesDao")
     private ReadItem readClothes;
 
     @Autowired
-    @Qualifier("ReadBicycle")
+    @Qualifier("BicycleDao")
     private ReadItem readBicycle;
 
     @Autowired
-    @Qualifier("ReadDefaultItem")
+    @Qualifier("ItemDao")
     private ReadItem readItem;
 
 

@@ -1,9 +1,14 @@
 package com.shs.entity;
 
+import javax.persistence.Entity;
 
+@Entity
 public class Bicycle extends Item {
+
     private String fork;
+
     private String brakes;
+
     private String frame;
 
     public Bicycle() {
@@ -42,7 +47,3 @@ public class Bicycle extends Item {
                 '}' + super.toString();
     }
 }
-
-
-
-

@@ -1,7 +1,7 @@
 package com.shs.service;
 
 import com.shs.dao.reference.ItemTypeDao;
-import com.shs.entity.ItemType;
+import com.shs.entity.reference.ItemType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <%--
   Created by IntelliJ IDEA.
   User: shankunassv
@@ -15,7 +15,8 @@
     <title>${param.type} ${param.action}</title>
 </head>
 <%@include file="includes/header.jsp" %>
-<form:form method="POST" name="Modify" action="/view-bicycles-modify" modelAttribute="item" id="item">
+<form:form method="POST" name="Modify" action="/modify-item" modelAttribute="item" id="item">
+    <input type="hidden" name="action" value="${ param.action }">
     <form:input type="hidden" path="itemType.itemTypeId"/>
     <form:input type="hidden" path="itemType.type"/>
     <form:input type="hidden" path="itemId"/>
@@ -43,21 +44,9 @@
                 </form:select>
             </td>
         </tr>
-        <tr>
-            <td><form:label path="fork">Fork</form:label></td>
-            <td><form:input path="fork"/></td>
-        </tr>
-        <tr>
-            <td><form:label path="brakes">Brakes</form:label></td>
-            <td><form:input path="brakes"/></td>
-        </tr>
-        <tr>
-            <td><form:label path="frame">Frame</form:label></td>
-            <td><form:input path="frame"/></td>
-        </tr>
-    </table>
-    <input type="submit" name="button" value="Submit"/>
-    <a href="/" title="">Cancel</a>
+</table>
+<input type="submit" name="button" value="Submit"/>
+<a href="/" title="">Cancel</a>
 </form:form>
 </body>
 </html>

@@ -7,7 +7,7 @@ import com.shs.dao.supply.ReadListItems;
 import com.shs.entity.Item;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository("ItemDao")
@@ -32,20 +32,17 @@ public class ItemJpaDao extends BaseJpaDao implements ReadItem, ReadListItems, C
     }
 
     @Override
-    @Transactional
     public void create(Item entity) {
         getEntityManager().persist(entity);
     }
 
     @Override
-    @Transactional
     public void update(Item entity) {
-            getEntityManager().merge(entity);
-            getEntityManager().flush();
-        }
+        getEntityManager().merge(entity);
+        getEntityManager().flush();
+    }
 
     @Override
-    @Transactional
     public void delete(int id) {
         Item entity = readItem(id);
         getEntityManager().remove(entity);

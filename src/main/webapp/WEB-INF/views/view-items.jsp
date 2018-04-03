@@ -36,7 +36,7 @@
                 <c:set var="addTypeURL" value= "${(param.type == 'clothes' ) or (param.type == 'bicycles' )
                         ? param.type
                         : 'item'}"/>
-                <c:url var="addurl" value="view-${addTypeURL}-modify">
+                <c:url var="addurl" value="modify-${addTypeURL}">
                     <c:param name="action" value="ADD"/>
                     <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
                     <c:param name="type" value="${ param.type }"/>
@@ -49,12 +49,12 @@
         ${ param.requestKey=="" ? "" : param.requestKey }
     </div>
     <div>
-        <c:url var="view" value="view-item">
+        <c:url var="view" value="view-items">
             <c:param name="sortingBy" value="${param.sortingBy}"/>
         </c:url>
         <a href="${view}" title="">ALL</a>
         <c:forEach var="itemType" items="${itemTypes}">
-            <c:url var="view" value="view-item">
+            <c:url var="view" value="view-items">
                 <c:param name="itemTypeId" value="${itemType.itemTypeId}"/>
                 <c:param name="type" value="${itemType.type}"/>
                 <c:param name="sortingBy" value="${param.sortingBy}"/>
@@ -65,7 +65,6 @@
     <div class="parent-item">
         <c:forEach var="elem" items="${item}" varStatus="status">
             <div class="img-responsive">
-                    <%-- <img class="item-image" src="${elem.base64imageFile}">--%>
                 <img class="item-image" src="/resources/images/no-img.png">
                 <span class="range-txt position-rage-bottom">
                      <c:out value="${ elem.itemStatus.status }"/><br>
@@ -77,8 +76,9 @@
                         ? elem.itemType.type
                         : 'item'}"/>
                     <div class="item edit">
-                        <c:url var="editurl" value="view-${type}-modify">
+                        <c:url var="editurl" value="modify-${type}">
                             <c:param name="itemId" value="${elem.itemId}"/>
+                            <c:param name="type" value="${elem.itemType.type}"/>
                             <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
                         </c:url>
                         <a href="${editurl}">Edit</a>

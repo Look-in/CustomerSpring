@@ -14,6 +14,6 @@ public class DefaultController {
 
     @RequestMapping(value = {"/", "/login**"}, method = {RequestMethod.GET})
     public String viewPage() {
-        return "redirect:/view-item";
+        return "redirect:/view-items";
     }
 }

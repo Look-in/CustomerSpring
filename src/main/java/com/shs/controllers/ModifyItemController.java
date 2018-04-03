@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
-@RequestMapping("/view-item-modify")
+@RequestMapping("/modify-item")
 public class ModifyItemController {
 
     @Autowired
@@ -55,6 +56,6 @@ public class ModifyItemController {
         redirectAttributes.addAttribute("itemTypeId", item.getItemType().getItemTypeId());
         redirectAttributes.addAttribute("type", item.getItemType().getType());
         redirectAttributes.addAttribute("requestKey", "Item saved successfully");
-        return "redirect:/view-item";
+        return "redirect:/view-items";
     }
 }

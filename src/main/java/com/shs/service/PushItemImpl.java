@@ -8,7 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.sql.SQLException;
+
 @Service
+@Transactional
 public class PushItemImpl implements PushItem {
 
     @Autowired
@@ -40,6 +44,10 @@ public class PushItemImpl implements PushItem {
             }
             else {
                 push.update(item);
+                //delete after debugging
+                item.setPrice(-1);
+                push.update(item);
+                //to here
             }
         }
 

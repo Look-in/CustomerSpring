@@ -5,8 +5,7 @@ body {
 
 .sort-item {
     height: 30px;
-    padding:10px;
-    padding-left: 0px;
+    padding: 0px 10px;
     background: rgb(80, 114, 150, 0.4);
     color: #2b2b2b;
 }
@@ -19,6 +18,7 @@ body {
 
 .item-type {
     text-transform: uppercase;
+    padding-left: 15px;
 }
 
 .parent-item {

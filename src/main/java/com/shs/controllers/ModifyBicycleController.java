@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
-@RequestMapping("/view-bicycles-modify")
+@RequestMapping("/modify-bicycles")
 public class ModifyBicycleController {
 
     @Autowired
@@ -49,12 +50,12 @@ public class ModifyBicycleController {
     public void doGet() { }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String doPost(Bicycle bicycle,RedirectAttributes redirectAttributes) {
+    public String doPost(Bicycle bicycle,RedirectAttributes redirectAttributes) throws SQLException {
         pushItem.pushItem(bicycle);
         redirectAttributes.addAttribute("itemTypeId", bicycle.getItemType().getItemTypeId());
         redirectAttributes.addAttribute("type", bicycle.getItemType().getType());
         redirectAttributes.addAttribute("requestKey", "Bicycle saved successfully");
-        return "redirect:/view-item";
+        return "redirect:/view-items";
     }
 }
 

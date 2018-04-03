@@ -16,7 +16,7 @@ import com.shs.service.SupplyService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/view-item")
+@RequestMapping("/view-items")
 public class ViewListItems {
 
     @Autowired

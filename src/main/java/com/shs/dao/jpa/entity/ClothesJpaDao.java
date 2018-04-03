@@ -6,8 +6,6 @@ import com.shs.dao.supply.ReadItem;
 import com.shs.entity.Clothes;
 import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
-
 @Repository("ClothesDao")
 public class ClothesJpaDao extends BaseJpaDao implements ReadItem, ChangeInstance<Clothes> {
 
@@ -17,20 +15,17 @@ public class ClothesJpaDao extends BaseJpaDao implements ReadItem, ChangeInstanc
     }
 
     @Override
-    @Transactional
     public void create(Clothes entity) {
         getEntityManager().persist(entity);
     }
 
     @Override
-    @Transactional
     public void update(Clothes entity) {
         getEntityManager().merge(entity);
         getEntityManager().flush();
     }
 
     @Override
-    @Transactional
     public void delete(int id) {
         Clothes entity = readItem(id);
         getEntityManager().remove(entity);

@@ -24,13 +24,10 @@ public class Item {
     @Column(name = "ID")
     private int itemId;
 
-    @Column
     private Integer price;
 
-    @Column
     private String name;
 
-    @Column
     private String description;
 
     @ManyToOne
@@ -41,14 +38,14 @@ public class Item {
     @JoinColumn(name="item_type_id")
     private ItemType itemType;
 
-    public Item(Integer itemId, Integer price, String name, String description, ItemStatus itemStatus, ItemType itemType) {
+  /*  public Item(Integer itemId, Integer price, String name, String description, ItemStatus itemStatus, ItemType itemType) {
         this.itemId = itemId;
         this.price = price;
         this.name = name;
         this.description = description;
         this.itemStatus = itemStatus;
         this.itemType = itemType;
-    }
+    }*/
 
     public Item() {
     }

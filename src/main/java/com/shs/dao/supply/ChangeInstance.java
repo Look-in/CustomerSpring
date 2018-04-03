@@ -7,6 +7,8 @@ package com.shs.dao.supply;
 
 import com.shs.entity.Item;
 
+import java.sql.SQLException;
+
 public interface ChangeInstance<T extends Item> {
 
     /**

@@ -42,14 +42,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/login/**").access("hasRole('ROLE_USER')")
-				.antMatchers("/login/**").access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/login/**").access("hasRole('ROLE_MANAGER')")
-				.antMatchers("/view-bicycle-modify/**").access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/view-clothes-modify/**").access("hasRole('ROLE_ADMIN')")
-				.antMatchers("/manage-order/**").access("hasRole('ROLE_MANAGER')")
-				.and().logout().logoutSuccessUrl("/view-item")
-				.and().exceptionHandling().accessDeniedPage("/403")
+				.antMatchers("/login/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_MANAGER')")
+				.antMatchers("/modify-**").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/delete**").access("hasRole('ROLE_ADMIN')")
+				.antMatchers("/manage-orders/**").access("hasRole('ROLE_MANAGER')")
+				.and().exceptionHandling().accessDeniedPage("/login/403")
+				.and().logout().logoutSuccessUrl("/view-items")
 				.and().formLogin().defaultSuccessUrl("/", false);
 	}
 }

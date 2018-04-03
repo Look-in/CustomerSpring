@@ -30,7 +30,6 @@
             </td>
         </tr>
         <tr>
-                <%--<input type="hidden" name="itemId" value="${ item.itemId }">--%>
             <td><form:label path="description">Description</form:label></td>
             <td><form:input path="description"/></td>
         </tr>
@@ -50,7 +49,7 @@
 </tr>
 </table>
 <input type="submit" name="button" value="Submit"/>
-<a href="selectitemservlet" title="">Cancel</a>
+<a href="/" title="">Cancel</a>
 </form:form>
 </body>
 </html>

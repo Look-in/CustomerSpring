@@ -1,5 +1,7 @@
 package com.shs.entity;
 
+import com.shs.entity.reference.ItemType;
+
 import javax.persistence.Entity;
 
 @Entity
@@ -12,6 +14,10 @@ public class Bicycle extends Item {
     private String frame;
 
     public Bicycle() {
+    }
+
+    public Bicycle(ItemType itemType) {
+        super(itemType);
     }
 
     public String getFork() {

@@ -33,9 +33,13 @@
         </div>
         <sec:authorize access="hasRole('ADMIN')">
             <div class="add-item">
-                <c:url var="addurl" value="${param.itemTypeId == 1 ? 'view-clothes-modify' : 'view-bicycle-modify'}">
+                <c:set var="addTypeURL" value= "${(param.type == 'clothes' ) or (param.type == 'bicycles' )
+                        ? param.type
+                        : 'item'}"/>
+                <c:url var="addurl" value="view-${addTypeURL}-modify">
                     <c:param name="action" value="ADD"/>
                     <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
+                    <c:param name="type" value="${ param.type }"/>
                 </c:url>
                 <a ${ empty param.itemTypeId ? 'hidden="true"' : '' } href="${addurl}">Add item</a>
             </div>
@@ -52,9 +56,10 @@
         <c:forEach var="itemType" items="${itemTypes}">
             <c:url var="view" value="view-item">
                 <c:param name="itemTypeId" value="${itemType.itemTypeId}"/>
+                <c:param name="type" value="${itemType.type}"/>
                 <c:param name="sortingBy" value="${param.sortingBy}"/>
             </c:url>
-            <a href="${view}" title="">${itemType.type}</a>
+            <a class="item-type" href="${view}" title="">${itemType.type}</a>
         </c:forEach>
     </div>
     <div class="parent-item">
@@ -68,17 +73,21 @@
                      <strong><c:out value="${ elem.price }"/>$</strong>
             </span>
                 <sec:authorize access="hasRole('ADMIN')">
-                    <div class="item edit" ${ empty param.itemTypeId ? 'hidden="true"' : '' }>
-                        <c:url var="editurl" value="${param.itemTypeId == 1 ? 'view-clothes-modify' : 'view-bicycle-modify'}">
+                    <c:set var="type" value= "${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
+                        ? elem.itemType.type
+                        : 'item'}"/>
+                    <div class="item edit">
+                        <c:url var="editurl" value="view-${type}-modify">
                             <c:param name="itemId" value="${elem.itemId}"/>
                             <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
                         </c:url>
                         <a href="${editurl}">Edit</a>
                     </div>
-                    <div class="item delete"  ${ empty param.itemTypeId ? 'hidden="true"' : '' }>
+                    <div class="item delete">
                         <form:form method="DELETE" name="Modify"
-                                   action="${param.itemTypeId == 1 ? 'view-clothes-modify/delete' : 'view-bicycle-modify/delete'}">
+                                   action="/delete">
                             <input type="hidden" name="itemTypeId" value="${ param.itemTypeId }">
+                            <input type="hidden" name="type" value="${ param.type }">
                             <input type="hidden" name="itemId" value="${elem.itemId}">
                             <input class="btn-delete" type="submit" value="Delete"/>
                         </form:form>

@@ -17,6 +17,10 @@ body {
     padding-left: 20px;
 }
 
+.item-type {
+    text-transform: uppercase;
+}
+
 .parent-item {
     float: none;
     overflow: auto;

@@ -12,25 +12,27 @@ import org.springframework.stereotype.Service;
 public class PushItemImpl implements PushItem {
 
     @Autowired
-    @Qualifier("PushClothes")
+    @Qualifier("ClothesDao")
     private ChangeInstance pushClothes;
 
     @Autowired
-    @Qualifier("PushBicycle")
+    @Qualifier("BicycleDao")
     private ChangeInstance pushBicycle;
 
     @Autowired
-    @Qualifier("PushDefaultItem")
+    @Qualifier("ItemDao")
     private ChangeInstance pushDefaultItem;
 
     @Override
     public void pushItem(Item item) {
-        ChangeInstance push=null;
+        ChangeInstance push;
         if (item instanceof Bicycle) {
             push = pushBicycle;
         } else {
             if (item instanceof Clothes) {
                 push = pushClothes;
+            } else {
+                push=pushDefaultItem;
             }
         }
             if (item.getItemId() == 0) {

@@ -44,7 +44,7 @@ public class SupplyServiceImpl implements SupplyService {
         if (itemClass == Bicycle.class) {
             return readBicycle.readItem(itemId);
         }
-        return null;
+        return readItem.readItem(itemId);
     }
 
 }

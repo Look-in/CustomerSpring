@@ -14,7 +14,7 @@ import javax.persistence.*;
         @NamedQuery(name = Item.ITEM_QUERY,
                 query = "select e from Item e WHERE e.itemType.itemTypeId = :id")
 })
-public abstract class Item {
+public class Item {
 
     public static final String ITEM_QUERY = "Item.getItem";
 
@@ -52,6 +52,11 @@ public abstract class Item {
 
     public Item() {
     }
+
+    public Item(ItemType itemType) {
+        this.itemType=itemType;
+    }
+
 
     public ItemType getItemType() {
         return itemType;
@@ -103,12 +108,12 @@ public abstract class Item {
         this.description = description;
     }
 
-  /*  @Override
+    @Override
     public String toString() {
         return "Item [Id =" + itemId + ", price=" +
                 String.format("%.2f", price) + ", name=" + name + " description= " +
                 description + " status=" + itemStatus.toString() + " type=" + itemType.toString();
-    }*/
+    }
 }
 
 

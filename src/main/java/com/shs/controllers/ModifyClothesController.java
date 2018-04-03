@@ -1,8 +1,11 @@
 package com.shs.controllers;
 
-import com.shs.entity.Bicycle;
+import com.shs.entity.Clothes;
 import com.shs.entity.reference.ItemStatus;
-import com.shs.service.*;
+import com.shs.entity.reference.ItemType;
+import com.shs.service.ItemStatusService;
+import com.shs.service.PushItem;
+import com.shs.service.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,8 +17,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping("/view-bicycle-modify")
-public class ViewBicycleModify {
+@RequestMapping("/view-clothes-modify")
+public class ModifyClothesController {
 
     @Autowired
     private SupplyService supplyService;
@@ -26,17 +29,16 @@ public class ViewBicycleModify {
     @Autowired
     private PushItem pushItem;
 
-    @Autowired
-    private ItemGeneration itemGeneration;
-
     /**
      * For every request for this controller, this will
      * create a Item instance
-     */
+     * */
     @ModelAttribute(value = "item")
-    public Bicycle newRequest(@RequestParam(required = false) Integer itemId) {
-        return (itemId != null ? (Bicycle) supplyService.getItemAttributes(itemId, Bicycle.class) :
-        itemGeneration.getNewBicycle());
+    public Clothes newRequest(@RequestParam(required = false) Integer itemId,
+                              @RequestParam(required = false) Integer itemTypeId,
+                              @RequestParam(required = false) String type) {
+        return (itemId != null ? (Clothes) supplyService.getItemAttributes(itemId, Clothes.class) :
+                new Clothes(new ItemType(itemTypeId,type)));
     }
 
     @ModelAttribute(value = "statuses")
@@ -48,20 +50,11 @@ public class ViewBicycleModify {
     public void doGet() { }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String doPost(Bicycle bicycle,RedirectAttributes redirectAttributes) {
-        pushItem.pushItem(bicycle);
-        redirectAttributes.addAttribute("itemTypeId", bicycle.getItemType().getItemTypeId());
-        redirectAttributes.addAttribute("requestKey", "Bicycle saved successfully");
-        return "redirect:/view-item";
-    }
-
-    @RequestMapping(value="/delete", method=RequestMethod.POST)
-    public String doDelete(@RequestParam Integer itemId, @RequestParam Integer itemTypeId, RedirectAttributes redirectAttributes) {
-        pushItem.deleteItem(itemId);
-        redirectAttributes.addAttribute("itemTypeId", itemTypeId);
-        redirectAttributes.addAttribute("requestKey", "Bicycle deleted successfully");
+    public String doPost(Clothes clothes, RedirectAttributes redirectAttributes) {
+        pushItem.pushItem(clothes);
+        redirectAttributes.addAttribute("itemTypeId", clothes.getItemType().getItemTypeId());
+        redirectAttributes.addAttribute("type", clothes.getItemType().getType());
+        redirectAttributes.addAttribute("requestKey", "Clothes saved successfully");
         return "redirect:/view-item";
     }
 }
-
-

@@ -1,5 +1,8 @@
 package com.shs.entity.reference;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,9 +14,11 @@ public class ItemStatus {
 
     @Id
     @Column(name = "ID")
+    @Getter @Setter
     private int itemStatusId;
 
     @Column(name = "STATUS")
+    @Getter @Setter
     private String status;
 
     public ItemStatus(int itemStatusId, String status) {
@@ -22,22 +27,6 @@ public class ItemStatus {
     }
 
     public ItemStatus() {
-    }
-
-    public void setItemStatusId(int itemStatusId) {
-        this.itemStatusId = itemStatusId;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getItemStatusId() {
-        return itemStatusId;
-    }
-
-    public String getStatus() {
-        return status;
     }
 
     @Override

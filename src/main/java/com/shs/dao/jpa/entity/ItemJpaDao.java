@@ -7,7 +7,6 @@ import com.shs.dao.supply.ReadListItems;
 import com.shs.entity.Item;
 import org.springframework.stereotype.Repository;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Repository("ItemDao")

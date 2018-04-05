@@ -35,15 +35,15 @@ CREATE TABLE CUSTOMER(
                                                 E_MAIL VARCHAR(50) NOT NULL UNIQUE);
 CREATE TABLE ORDERS(
                                          ID INT PRIMARY KEY AUTO_INCREMENT,
-                                         CUSTOMER_ID INT,
-                                             FOREIGN KEY (CUSTOMER_ID)
-                                               REFERENCES CUSTOMER (ID)
+                                         USERNAME VARCHAR(15),
+                                             FOREIGN KEY (USERNAME)
+                                               REFERENCES USERS (USERNAME)
                                                    ON DELETE CASCADE,
                                          ORDER_STATUS_ID INT,
                                               FOREIGN KEY (ORDER_STATUS_ID)
                                                  REFERENCES ORDER_STATUS (ID)
                                                    ON DELETE CASCADE,
-                                          UNIQUE KEY NDX_ORDER (ID,CUSTOMER_ID));
+                                          UNIQUE KEY NDX_ORDER (ID,USERNAME));
 CREATE TABLE ORDER_ITEM(
                                                    ID INT  PRIMARY KEY  AUTO_INCREMENT,
                                                    ORDER_ID INT, 

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -51,7 +50,7 @@ public class ModifyClothesController {
     public void doGet() { }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String doPost(Clothes clothes, RedirectAttributes redirectAttributes) throws SQLException {
+    public String doPost(Clothes clothes, RedirectAttributes redirectAttributes) {
         pushItem.pushItem(clothes);
         redirectAttributes.addAttribute("itemTypeId", clothes.getItemType().getItemTypeId());
         redirectAttributes.addAttribute("type", clothes.getItemType().getType());

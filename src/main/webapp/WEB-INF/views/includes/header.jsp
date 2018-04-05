@@ -20,7 +20,7 @@
             </form>
         </div>
         <div>
-            <a class="user-form" href=""> ${pageContext.request.userPrincipal.name} </a>
+            <a class="user-form" href=""> ${pageContext.request.userPrincipal.name} ${countBasketItem}</a>
         </div>
     </c:if>
     <c:if test="${pageContext.request.userPrincipal.name == null}">

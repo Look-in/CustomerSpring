@@ -1,10 +1,12 @@
 package com.shs.controllers;
 
+import com.shs.entity.event.ShoppingCart;
 import com.shs.entity.reference.ItemType;
 import com.shs.entity.comparator.ItemComparator;
 import com.shs.entity.event.AttributeToCompare;
 import com.shs.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,13 +28,21 @@ public class ViewListItems {
     private ItemTypeService itemType;
 
     @ModelAttribute(value = "item")
-    public List<Item> newRequest(@RequestParam(required=false, defaultValue = "0") int itemTypeId,
-                                 @RequestParam(required=false) AttributeToCompare sortingBy) {
+    public List<Item> newRequest(@RequestParam(required = false, defaultValue = "0") int itemTypeId,
+                                 @RequestParam(required = false) AttributeToCompare sortingBy) {
         List<Item> items = supplyService.getItems(itemTypeId);
         if (sortingBy != null) {
             ItemComparator.compare(items, sortingBy);
         }
         return items;
+    }
+
+    //transfer the number of items in the cart
+    @ModelAttribute(value = "countBasketItem")
+    public Integer hasBasket() {
+        return (ShoppingCart.cart.get(SecurityContextHolder.getContext().getAuthentication().getName()) != null ?
+                ShoppingCart.cart.get(SecurityContextHolder.getContext().getAuthentication().getName()).getItems().size() :
+                null);
     }
 
     @ModelAttribute(value = "itemTypes")

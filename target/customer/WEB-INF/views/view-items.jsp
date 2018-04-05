@@ -71,6 +71,7 @@
                      <c:out value="${ elem.name }"/><br>
                      <strong><c:out value="${ elem.price }"/>$</strong>
             </span>
+                <%-- Only for role ADMIN available edit form --%>
                 <sec:authorize access="hasRole('ADMIN')">
                     <c:set var="type" value= "${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
                         ? elem.itemType.type
@@ -90,6 +91,24 @@
                             <input type="hidden" name="type" value="${ param.type }">
                             <input type="hidden" name="itemId" value="${elem.itemId}">
                             <input class="btn-delete" type="submit" value="Delete"/>
+                        </form:form>
+                    </div>
+                </sec:authorize>
+                    <%-- Only for role USER available adding items to basket --%>
+                <sec:authorize access="hasRole('USER')">
+                    <c:set var="type" value= "${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
+                        ? elem.itemType.type
+                        : 'item'}"/>
+                    <div class="item edit">
+                        <c:url var="viewurl" value="show-${type}">
+                            <c:param name="itemId" value="${elem.itemId}"/>
+                        </c:url>
+                        <a href="${viewurl}">Show</a>
+                    </div>
+                    <div class="item delete">
+                        <form:form method="POST" name="addItemCart" action="/addItemCart">
+                            <input type="hidden" name="itemId" value="${elem.itemId}">
+                            <input class="btn-delete" type="submit" value="Add cart"/>
                         </form:form>
                     </div>
                 </sec:authorize>

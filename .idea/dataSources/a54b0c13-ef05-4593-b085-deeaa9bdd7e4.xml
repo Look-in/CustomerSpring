@@ -842,385 +842,445 @@
     <table id="214" parent="2" name="orders">
       <Engine>MyISAM</Engine>
     </table>
-    <column id="215" parent="203" name="ID">
+    <table id="215" parent="2" name="user_roles">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="216" parent="2" name="users">
+      <Engine>MyISAM</Engine>
+    </table>
+    <column id="217" parent="203" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="216" parent="203" name="COUNTRY_ID">
+    <column id="218" parent="203" name="COUNTRY_ID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="217" parent="203" name="ADDRESS">
+    <column id="219" parent="203" name="ADDRESS">
       <Position>3</Position>
       <DataType>varchar(150)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="218" parent="203" name="CUSTOMER_ID">
+    <column id="220" parent="203" name="CUSTOMER_ID">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="219" parent="203" name="DEFAULT_ADDR">
+    <column id="221" parent="203" name="DEFAULT_ADDR">
       <Position>5</Position>
       <DataType>tinyint(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="220" parent="203" name="COUNTRY_ID">
+    <index id="222" parent="203" name="COUNTRY_ID">
       <ColNames>COUNTRY_ID</ColNames>
     </index>
-    <index id="221" parent="203" name="CUSTOMER_ID">
+    <index id="223" parent="203" name="CUSTOMER_ID">
       <ColNames>CUSTOMER_ID</ColNames>
     </index>
-    <key id="222" parent="203" name="PRIMARY">
+    <key id="224" parent="203" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="223" parent="204" name="ID">
+    <column id="225" parent="204" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="224" parent="204" name="FORK">
+    <column id="226" parent="204" name="FORK">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="225" parent="204" name="BRAKES">
+    <column id="227" parent="204" name="BRAKES">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="226" parent="204" name="FRAME">
+    <column id="228" parent="204" name="FRAME">
       <Position>4</Position>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="227" parent="204" name="PRIMARY">
+    <key id="229" parent="204" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="228" parent="205" name="ID">
+    <column id="230" parent="205" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="229" parent="205" name="SEASON">
+    <column id="231" parent="205" name="SEASON">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="230" parent="205" name="PRIMARY">
+    <key id="232" parent="205" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="231" parent="206" name="ID">
+    <column id="233" parent="206" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="206" name="COUNTRY">
+    <column id="234" parent="206" name="COUNTRY">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="233" parent="206" name="COUNTRY">
+    <index id="235" parent="206" name="COUNTRY">
       <ColNames>COUNTRY</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="234" parent="206" name="PRIMARY">
+    <key id="236" parent="206" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="235" parent="206" name="COUNTRY">
+    <key id="237" parent="206" name="COUNTRY">
       <ColNames>COUNTRY</ColNames>
       <UnderlyingIndexName>COUNTRY</UnderlyingIndexName>
     </key>
-    <column id="236" parent="207" name="ID">
+    <column id="238" parent="207" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="207" name="LOGIN">
+    <column id="239" parent="207" name="LOGIN">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="207" name="E_MAIL">
+    <column id="240" parent="207" name="E_MAIL">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="239" parent="207" name="LOGIN">
+    <index id="241" parent="207" name="LOGIN">
       <ColNames>LOGIN</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="240" parent="207" name="E_MAIL">
+    <index id="242" parent="207" name="E_MAIL">
       <ColNames>E_MAIL</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="241" parent="207" name="PRIMARY">
+    <key id="243" parent="207" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="242" parent="207" name="LOGIN">
+    <key id="244" parent="207" name="LOGIN">
       <ColNames>LOGIN</ColNames>
       <UnderlyingIndexName>LOGIN</UnderlyingIndexName>
     </key>
-    <key id="243" parent="207" name="E_MAIL">
+    <key id="245" parent="207" name="E_MAIL">
       <ColNames>E_MAIL</ColNames>
       <UnderlyingIndexName>E_MAIL</UnderlyingIndexName>
     </key>
-    <column id="244" parent="208" name="ID">
+    <column id="246" parent="208" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="208" name="PRICE">
+    <column id="247" parent="208" name="PRICE">
       <Position>2</Position>
       <DataType>int(7) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="208" name="NAME">
+    <column id="248" parent="208" name="NAME">
       <Position>3</Position>
       <DataType>varchar(50)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="208" name="DESCRIPTION">
+    <column id="249" parent="208" name="DESCRIPTION">
       <Position>4</Position>
       <DataType>varchar(150)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="208" name="ITEM_STATUS_ID">
+    <column id="250" parent="208" name="ITEM_STATUS_ID">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="208" name="ITEM_TYPE_ID">
+    <column id="251" parent="208" name="ITEM_TYPE_ID">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="250" parent="208" name="ITEM_STATUS_ID">
+    <index id="252" parent="208" name="ITEM_STATUS_ID">
       <ColNames>ITEM_STATUS_ID</ColNames>
     </index>
-    <index id="251" parent="208" name="ITEM_TYPE_ID">
+    <index id="253" parent="208" name="ITEM_TYPE_ID">
       <ColNames>ITEM_TYPE_ID</ColNames>
     </index>
-    <key id="252" parent="208" name="PRIMARY">
+    <key id="254" parent="208" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="253" parent="209" name="ID">
+    <column id="255" parent="209" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="209" name="STATUS">
+    <column id="256" parent="209" name="STATUS">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="255" parent="209" name="STATUS">
+    <index id="257" parent="209" name="STATUS">
       <ColNames>STATUS</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="256" parent="209" name="PRIMARY">
+    <key id="258" parent="209" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="257" parent="209" name="STATUS">
+    <key id="259" parent="209" name="STATUS">
       <ColNames>STATUS</ColNames>
       <UnderlyingIndexName>STATUS</UnderlyingIndexName>
     </key>
-    <column id="258" parent="210" name="ID">
+    <column id="260" parent="210" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="210" name="ITEM_TYPE">
+    <column id="261" parent="210" name="ITEM_TYPE">
       <Position>2</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="260" parent="210" name="ITEM_TYPE">
+    <index id="262" parent="210" name="ITEM_TYPE">
       <ColNames>ITEM_TYPE</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="261" parent="210" name="PRIMARY">
+    <key id="263" parent="210" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="262" parent="210" name="ITEM_TYPE">
+    <key id="264" parent="210" name="ITEM_TYPE">
       <ColNames>ITEM_TYPE</ColNames>
       <UnderlyingIndexName>ITEM_TYPE</UnderlyingIndexName>
     </key>
-    <column id="263" parent="211" name="ID">
+    <column id="265" parent="211" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="211" name="ORDER_ID">
+    <column id="266" parent="211" name="ORDER_ID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="211" name="ITEM_ID">
+    <column id="267" parent="211" name="ITEM_ID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="266" parent="211" name="ORDER_ID">
+    <index id="268" parent="211" name="ORDER_ID">
       <ColNames>ORDER_ID</ColNames>
     </index>
-    <index id="267" parent="211" name="ITEM_ID">
+    <index id="269" parent="211" name="ITEM_ID">
       <ColNames>ITEM_ID</ColNames>
     </index>
-    <key id="268" parent="211" name="PRIMARY">
+    <key id="270" parent="211" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="269" parent="212" name="ID">
+    <column id="271" parent="212" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="212" name="PROCESSING_TIME">
+    <column id="272" parent="212" name="PROCESSING_TIME">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="212" name="ORDER_ID">
+    <column id="273" parent="212" name="ORDER_ID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="212" name="ORDER_STATUS_ID">
+    <column id="274" parent="212" name="ORDER_STATUS_ID">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="273" parent="212" name="NDX_ORDER_TIME">
+    <index id="275" parent="212" name="NDX_ORDER_TIME">
       <ColNames>ORDER_ID
 ORDER_STATUS_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="274" parent="212" name="ORDER_STATUS_ID">
+    <index id="276" parent="212" name="ORDER_STATUS_ID">
       <ColNames>ORDER_STATUS_ID</ColNames>
     </index>
-    <key id="275" parent="212" name="PRIMARY">
+    <key id="277" parent="212" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="276" parent="212" name="NDX_ORDER_TIME">
+    <key id="278" parent="212" name="NDX_ORDER_TIME">
       <ColNames>ORDER_ID
 ORDER_STATUS_ID</ColNames>
       <UnderlyingIndexName>NDX_ORDER_TIME</UnderlyingIndexName>
     </key>
-    <column id="277" parent="213" name="ID">
+    <column id="279" parent="213" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="213" name="STATUS">
+    <column id="280" parent="213" name="STATUS">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="279" parent="213" name="STATUS">
+    <index id="281" parent="213" name="STATUS">
       <ColNames>STATUS</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="280" parent="213" name="PRIMARY">
+    <key id="282" parent="213" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="281" parent="213" name="STATUS">
+    <key id="283" parent="213" name="STATUS">
       <ColNames>STATUS</ColNames>
       <UnderlyingIndexName>STATUS</UnderlyingIndexName>
     </key>
-    <column id="282" parent="214" name="ID">
+    <column id="284" parent="214" name="ID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="214" name="CUSTOMER_ID">
+    <column id="285" parent="214" name="USERNAME">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(15)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="214" name="ORDER_STATUS_ID">
+    <column id="286" parent="214" name="ORDER_STATUS_ID">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="285" parent="214" name="NDX_ORDER">
+    <index id="287" parent="214" name="NDX_ORDER">
       <ColNames>ID
-CUSTOMER_ID</ColNames>
+USERNAME</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="286" parent="214" name="CUSTOMER_ID">
-      <ColNames>CUSTOMER_ID</ColNames>
+    <index id="288" parent="214" name="USERNAME">
+      <ColNames>USERNAME</ColNames>
     </index>
-    <index id="287" parent="214" name="ORDER_STATUS_ID">
+    <index id="289" parent="214" name="ORDER_STATUS_ID">
       <ColNames>ORDER_STATUS_ID</ColNames>
     </index>
-    <key id="288" parent="214" name="PRIMARY">
+    <key id="290" parent="214" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="289" parent="214" name="NDX_ORDER">
+    <key id="291" parent="214" name="NDX_ORDER">
       <ColNames>ID
-CUSTOMER_ID</ColNames>
+USERNAME</ColNames>
       <UnderlyingIndexName>NDX_ORDER</UnderlyingIndexName>
     </key>
-    <trigger id="290" parent="214" name=" AFTER_INSERT_ORDERS">
-      <Turn>after-row</Turn>
-      <Events>I</Events>
-    </trigger>
-    <trigger id="291" parent="214" name="AFTER_UPDATE_ORDERS">
-      <Turn>after-row</Turn>
-      <Events>U</Events>
-    </trigger>
+    <column id="292" parent="215" name="user_role_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="293" parent="215" name="username">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="294" parent="215" name="role">
+      <Position>3</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="295" parent="215" name="uni_username_role">
+      <ColNames>role
+username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="296" parent="215" name="fk_username_idx">
+      <ColNames>username</ColNames>
+    </index>
+    <key id="297" parent="215" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_role_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="298" parent="215" name="uni_username_role">
+      <ColNames>role
+username</ColNames>
+      <UnderlyingIndexName>uni_username_role</UnderlyingIndexName>
+    </key>
+    <column id="299" parent="216" name="username">
+      <Position>1</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="216" name="password">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="216" name="enabled">
+      <Position>3</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="302" parent="216" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>username</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

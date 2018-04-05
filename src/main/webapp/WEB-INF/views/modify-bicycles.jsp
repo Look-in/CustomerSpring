@@ -15,7 +15,7 @@
     <title>${param.type} ${param.action}</title>
 </head>
 <%@include file="includes/header.jsp" %>
-<form:form method="POST" name="Modify" action="/modify-view" modelAttribute="item" id="item">
+<form:form method="POST" name="Modify" action="/modify-bicycles" modelAttribute="item" id="item">
     <form:input type="hidden" path="itemType.itemTypeId"/>
     <form:input type="hidden" path="itemType.type"/>
     <form:input type="hidden" path="itemId"/>

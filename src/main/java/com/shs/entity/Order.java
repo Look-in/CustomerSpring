@@ -1,51 +1,47 @@
 package com.shs.entity;
 
-import java.util.List;
-import java.util.Date;
+import com.shs.entity.reference.OrderStatus;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = ("ORDERS"))
+@Data
+@NoArgsConstructor
 public class Order {
 
+    @Id
+    @Column(name = "ID")
     private int orderId;
 
-    private int status;
+    @ManyToOne
+    @JoinColumn(name = "order_status_id")
+    private OrderStatus orderStatus;
 
-    private List<Item> items;
 
-    private Date datetimecreate;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "ORDER_ITEM",
+            joinColumns = @JoinColumn(name = "ORDER_ID"))
+    private List<Item> items = new ArrayList<>();
 
-    // поля и методы описания подробностей заказа
-    public Order(int orderId, byte status, List<Item> items) {
-        this.orderId = orderId;
-        this.status = status;
-        this.items = items;
+    @Column(name = "username")
+    private String user;
+
+    public Order(String user, Item item) {
+        orderStatus=new OrderStatus(1);
+        items.add(item);
+        this.user = user;
     }
 
-    public int getOrderId() {
-        return orderId;
+    public void addItem(Item item) {
+        items.add(item);
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public Date getDatetimecreate() {
-        return datetimecreate;
-    }
-
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public void setDatetimecreate(Date datetimecreate) {
-        this.datetimecreate = datetimecreate;
-    }
-
-    @Override
-    public String toString() {
-        return "Order [orderId =" + orderId + ", status=" + status + "]";
+    public void removeItem(Item item) {
+        items.remove(item);
     }
 }

@@ -1,6 +1,6 @@
 package com.shs.entity.event;
 
-import com.shs.entity.Order;
+import com.shs.entity.orders.Order;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

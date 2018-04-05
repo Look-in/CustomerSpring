@@ -1,16 +1,16 @@
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
-import com.shs.dao.supply.ChangeInstance;
+import com.shs.dao.supply.ChangeItem;
 import com.shs.dao.supply.ReadItem;
 import com.shs.dao.supply.ReadListItems;
-import com.shs.entity.Item;
+import com.shs.entity.items.Item;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository("ItemDao")
-public class ItemJpaDao extends BaseJpaDao implements ReadItem, ReadListItems, ChangeInstance<Item> {
+public class ItemJpaDao extends BaseJpaDao implements ReadItem, ReadListItems, ChangeItem<Item> {
 
     @Override
     public Item readItem(int itemId) {

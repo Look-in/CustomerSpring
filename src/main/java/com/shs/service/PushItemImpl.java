@@ -1,9 +1,9 @@
 package com.shs.service;
 
-import com.shs.dao.supply.ChangeInstance;
-import com.shs.entity.Bicycle;
-import com.shs.entity.Clothes;
-import com.shs.entity.Item;
+import com.shs.dao.supply.ChangeItem;
+import com.shs.entity.items.Bicycle;
+import com.shs.entity.items.Clothes;
+import com.shs.entity.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -16,19 +16,19 @@ public class PushItemImpl implements PushItem {
 
     @Autowired
     @Qualifier("ClothesDao")
-    private ChangeInstance pushClothes;
+    private ChangeItem pushClothes;
 
     @Autowired
     @Qualifier("BicycleDao")
-    private ChangeInstance pushBicycle;
+    private ChangeItem pushBicycle;
 
     @Autowired
     @Qualifier("ItemDao")
-    private ChangeInstance pushDefaultItem;
+    private ChangeItem pushDefaultItem;
 
     @Override
     public void pushItem(Item item) {
-        ChangeInstance push;
+        ChangeItem push;
         if (item instanceof Bicycle) {
             push = pushBicycle;
         } else {

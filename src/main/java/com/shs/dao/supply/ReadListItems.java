@@ -5,7 +5,7 @@
  */
 package com.shs.dao.supply;
 
-import com.shs.entity.Item;
+import com.shs.entity.items.Item;
 
 import java.util.List;
 

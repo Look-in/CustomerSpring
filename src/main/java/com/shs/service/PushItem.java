@@ -1,8 +1,6 @@
 package com.shs.service;
 
-import com.shs.entity.Item;
-
-import java.sql.SQLException;
+import com.shs.entity.items.Item;
 
 public interface PushItem {
 

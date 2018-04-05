@@ -6,14 +6,14 @@
 
 package com.shs.dao.supply;
 
-import com.shs.entity.Item;
+import com.shs.entity.items.Item;
 
 public interface ReadItem<T extends Item> {
 
     /**
      * Считывает поля объекта Item
      *
-     * @param id код товара {@link Item}
+     * @param itemId код товара {@link Item}
      */
     T readItem(int itemId);
 }

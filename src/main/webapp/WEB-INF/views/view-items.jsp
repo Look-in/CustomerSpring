@@ -33,7 +33,7 @@
         </div>
         <sec:authorize access="hasRole('ADMIN')">
             <div class="add-item">
-                <c:set var="addTypeURL" value= "${(param.type == 'clothes' ) or (param.type == 'bicycles' )
+                <c:set var="addTypeURL" value="${(param.type == 'clothes' ) or (param.type == 'bicycles' )
                         ? param.type
                         : 'item'}"/>
                 <c:url var="addurl" value="modify-${addTypeURL}">
@@ -71,9 +71,9 @@
                      <c:out value="${ elem.name }"/><br>
                      <strong><c:out value="${ elem.price }"/>$</strong>
             </span>
-                <%-- Only for role ADMIN available edit form --%>
+                    <%-- Only for role ADMIN available edit form --%>
                 <sec:authorize access="hasRole('ADMIN')">
-                    <c:set var="type" value= "${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
+                    <c:set var="type" value="${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
                         ? elem.itemType.type
                         : 'item'}"/>
                     <div class="item edit">
@@ -96,17 +96,17 @@
                 </sec:authorize>
                     <%-- Only for role USER available adding items to basket --%>
                 <sec:authorize access="hasRole('USER')">
-                    <c:set var="type" value= "${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
+                    <c:set var="type" value="${(elem.itemType.type== 'clothes' ) or (elem.itemType.type== 'bicycles' )
                         ? elem.itemType.type
                         : 'item'}"/>
                     <div class="item edit">
-                        <c:url var="viewurl" value="show-${type}">
+                        <c:url var="viewurl" value="/shopping-cart/show-${type}">
                             <c:param name="itemId" value="${elem.itemId}"/>
                         </c:url>
                         <a href="${viewurl}">Show</a>
                     </div>
                     <div class="item delete">
-                        <form:form method="POST" name="addItemCart" action="/addItemCart">
+                        <form:form method="POST" name="shopping-cart" action="/shopping-cart">
                             <input type="hidden" name="itemId" value="${elem.itemId}">
                             <input class="btn-delete" type="submit" value="Add cart"/>
                         </form:form>
@@ -115,6 +115,11 @@
             </div>
         </c:forEach>
     </div>
+</div>
+<div ${action == "shopping" ? '' : 'hidden="true"' }>
+    <form:form method="POST" name="addItemCart" action="/shopping-cart/put">
+        <input class="btn-delete" type="submit" value="putOrder"/>
+    </form:form>
 </div>
 </body>
 </html>

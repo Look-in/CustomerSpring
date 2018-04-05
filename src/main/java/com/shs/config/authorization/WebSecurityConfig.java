@@ -28,7 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.usersByUsernameQuery(
 						"select username,password, enabled from users where username=?")
 				.authoritiesByUsernameQuery(
-						"select username, role from user_roles where username=?");
+						"select username, role from users inner join user_roles " +
+								"on users.user_role_id=user_roles.id where username=?");
 	}
 
 	/*Only for debugging uses not encoding pass authentication.
@@ -43,11 +44,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/login/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_USER', 'ROLE_MANAGER')")
-				.antMatchers("/addItemBasket**").access("hasRole('ROLE_USER')")
+				.antMatchers("/shopping**").access("hasRole('ROLE_USER')")
 				.antMatchers("/modify-**").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/delete**").access("hasRole('ROLE_ADMIN')")
 				.antMatchers("/manage-orders/**").access("hasRole('ROLE_MANAGER')")
-				.and().exceptionHandling().accessDeniedPage("/login/403")
+				.and().exceptionHandling().accessDeniedPage("/403")
 				.and().logout().logoutSuccessUrl("/view-items")
 				.and().formLogin().defaultSuccessUrl("/", false);
 	}

@@ -1,13 +1,13 @@
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
-import com.shs.dao.supply.ChangeInstance;
+import com.shs.dao.supply.ChangeItem;
 import com.shs.dao.supply.ReadItem;
-import com.shs.entity.Bicycle;
+import com.shs.entity.items.Bicycle;
 import org.springframework.stereotype.Repository;
 
 @Repository("BicycleDao")
-public class BicycleJpaDao extends BaseJpaDao implements ReadItem, ChangeInstance<Bicycle> {
+public class BicycleJpaDao extends BaseJpaDao implements ReadItem, ChangeItem<Bicycle> {
 
     @Override
     public Bicycle readItem(int itemId) {

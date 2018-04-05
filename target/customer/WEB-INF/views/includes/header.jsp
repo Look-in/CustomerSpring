@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <header>
     <h1>${param.action} ${param.type}</h1>
@@ -20,7 +21,10 @@
             </form>
         </div>
         <div>
-            <a class="user-form" href=""> ${pageContext.request.userPrincipal.name} ${countBasketItem}</a>
+            <sec:authorize access="hasRole('USER')">
+                <c:set var="shoppingcart" value="shopping-cart"/>
+            </sec:authorize>
+            <a class="user-form" href="${shoppingcart}"> Shopping cart ${countBasketItem}</a>
         </div>
     </c:if>
     <c:if test="${pageContext.request.userPrincipal.name == null}">
@@ -33,6 +37,6 @@
         </div>
     </c:if>
     <div>
-        <a class="user-form" href="">Help</a>
+        <a class="user-form" href="">Account</a>
     </div>
 </header>

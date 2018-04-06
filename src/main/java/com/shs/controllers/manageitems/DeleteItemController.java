@@ -1,6 +1,6 @@
 package com.shs.controllers.manageitems;
 
-import com.shs.service.PushItem;
+import com.shs.service.entity.PushItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -8,7 +8,7 @@ public enum AttributeToCompare{
 
     private final String displayName;
 
-    private AttributeToCompare (String displayName) {
+    AttributeToCompare (String displayName) {
         this.displayName = displayName;
     }
 

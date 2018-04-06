@@ -2,7 +2,8 @@ package com.shs.controllers.shoppingcart;
 
 import com.shs.entity.event.ShoppingCart;
 import com.shs.entity.items.Item;
-import com.shs.service.ChangeCart;
+import com.shs.service.shoppingcart.ChangeCart;
+import com.shs.service.shoppingcart.GetCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,9 @@ public class ShoppingCartController {
     @Autowired
     ChangeCart changeCart;
 
+    @Autowired
+    GetCart shoppingCart;
+
     /**
      * For every request for this controller, item will
      * be added to the cart
@@ -39,6 +43,14 @@ public class ShoppingCartController {
     public ModelAndView doGet() {
         ModelAndView modelAndView = new ModelAndView("/view-items");
         modelAndView.addObject("action","shopping");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/show-orders", method = RequestMethod.GET)
+    public ModelAndView doGetCart(Authentication authentication) {
+        ModelAndView modelAndView = new ModelAndView("/view-items");
+        //System.out.println(shoppingCart.readUserOrders(authentication.getName()).get(0).getItems().size());
+        //modelAndView.addObject("item",shoppingCart.readUserOrders(authentication.getName()).get(0));
         return modelAndView;
     }
 

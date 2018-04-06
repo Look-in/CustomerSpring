@@ -124,3 +124,12 @@ body {
 .table-edit select {
     font-size: 18px;
 }
+
+.exception {
+    color: #850000;
+}
+
+.exception p {
+    color: black;
+    font-size: 20px;
+}

@@ -2,6 +2,7 @@ package com.shs.entity.reference;
 
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name=("ITEM_TYPE"))
-@Data
+@Data @NoArgsConstructor
 public class ItemType {
 
     @Id
@@ -25,7 +26,5 @@ public class ItemType {
         this.type = type;
     }
 
-    public ItemType() {
-    }
 }
 

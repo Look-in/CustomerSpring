@@ -10,18 +10,8 @@ import org.springframework.web.servlet.config.annotation.*;
 @Configuration
 @EnableWebMvc
 @ComponentScan({"com.shs.config.authorization", "com.shs.controllers",  "com.shs.service" , "com.shs.dao" })
-@ImportResource("classpath:spring/dao.xml")
+@ImportResource({"classpath:spring/dao.xml" , "classpath:spring/exception.xml"})
 public class WebConfig implements WebMvcConfigurer {
-
-    @Bean(name = "dataSource")
-    public DriverManagerDataSource dataSource() {
-        DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/barber");
-        driverManagerDataSource.setUsername("root");
-        driverManagerDataSource.setPassword("sql");
-        return driverManagerDataSource;
-    }
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {

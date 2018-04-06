@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
 <header>
     <h1>${param.action} ${param.type}</h1>
     <c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -37,6 +36,9 @@
         </div>
     </c:if>
     <div>
-        <a class="user-form" href="">Account</a>
+        <sec:authorize access="hasRole('USER')">
+            <c:set var="ordercart" value="/shopping-cart/show-orders"/>
+        </sec:authorize>
+        <a class="user-form" href="${ordercart}">Account</a>
     </div>
 </header>

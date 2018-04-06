@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.shs.service.ItemTypeService;
-import com.shs.service.SupplyService;
+import com.shs.service.reference.ItemTypeService;
+import com.shs.service.entity.SupplyService;
 
 import java.util.List;
 

@@ -11,32 +11,40 @@ import java.util.List;
 
 @Entity
 @Table(name = ("ORDERS"))
-@Data
-@NoArgsConstructor
+@NamedQueries({
+        @NamedQuery(name = Order.ALL_ORDER_QUERY,
+                query = "select e from Order e"),
+        @NamedQuery(name = Order.ORDER_QUERY,
+                query = "select e from Order e WHERE e.username = :username")
+})
+@Data @NoArgsConstructor
 public class Order {
 
+    public static final String ORDER_QUERY = "Order.getOrder";
+
+    public static final String ALL_ORDER_QUERY = "Order.getAllOrders";
+
     @Id
-    @Column(name = "ID")
-    private int orderId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id", updatable = false, nullable = false)
+    private Integer OrderId;
 
     @ManyToOne
     @JoinColumn(name = "order_status_id")
     private OrderStatus orderStatus;
 
-
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "order_item",
-            joinColumns = @JoinColumn(name = "order_ID"),
-            inverseJoinColumns = @JoinColumn(name = "item_ID"))
+            joinColumns=@JoinColumn(name="order_id"),
+            inverseJoinColumns=@JoinColumn(name="item_ID"))
     private List<Item> items = new LinkedList<>();
 
-    @Column(name = "username")
-    private String user;
+    private String username;
 
-    public Order(String user, Item item) {
-        orderStatus=new OrderStatus(1);
+    public Order(String username, Item item) {
+        orderStatus = new OrderStatus(1);
         items.add(item);
-        this.user = user;
+        this.username = username;
     }
 
     public void addItem(Item item) {

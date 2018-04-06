@@ -1,7 +1,7 @@
 package com.shs.controllers.viewitems;
 
 import com.shs.entity.items.Clothes;
-import com.shs.service.SupplyService;
+import com.shs.service.entity.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;

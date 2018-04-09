@@ -1,25 +1,22 @@
 /**
- * Base class for all DaoClasses.
+ * Base class with Entity manager and Logger for all DaoClasses.
  * @author Serg Shankunas
  */
 package com.shs.dao.jpa;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 public abstract class BaseJpaDao {
 
-    private EntityManager entityManager;
-
-  /*  @SuppressWarnings("unused")
-    private final Logger logger = LoggerFactory.getLogger(getClass());*/
+    @Getter
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @PersistenceContext
-    public void setEntityManager(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
-
-    public EntityManager getEntityManager() {
-        return entityManager;
-    }
+    @Getter @Setter
+    private EntityManager entityManager;
 }

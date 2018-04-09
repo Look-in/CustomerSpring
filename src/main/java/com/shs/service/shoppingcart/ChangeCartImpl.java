@@ -1,11 +1,16 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Implements methods for managing user orders
+ */
 package com.shs.service.shoppingcart;
 
-import com.shs.dao.order.PutShoppingCart;
-import com.shs.entity.items.Item;
+import com.shs.dao.order.PutShoppingCartDao;
+import com.shs.dao.reference.OrderStatusDao;
+import com.shs.dao.supply.ReadItemDao;
 import com.shs.entity.orders.Order;
 import com.shs.entity.event.ShoppingCart;
-import com.shs.service.entity.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,23 +20,33 @@ import javax.transaction.Transactional;
 public class ChangeCartImpl implements ChangeCart {
 
     @Autowired
-    private PutShoppingCart shoppingCart;
+    private PutShoppingCartDao shoppingCart;
 
     @Autowired
-    private SupplyService supplyService;
+    private OrderStatusDao orderStatus;
+
+
+    @Autowired
+    @Qualifier("ItemDao")
+    private ReadItemDao readItemDao;
 
     @Override
     public void putOrder(String user, Order order) {
         shoppingCart.putOrder(order);
-        ShoppingCart.cart.remove(user);
+        ShoppingCart.shoppingCart.remove(user);
     }
 
+    /**
+     * If user shopping cart is null, then creating a new Order, and place them into the map,
+     * else add new item to existing order
+     */
     @Override
-    public void updateShoppingCart(String user, int itemId) {
-        if (ShoppingCart.cart.get(user) == null) {
-            ShoppingCart.cart.put(user, new Order(user, supplyService.getItemAttributes(itemId, Item.class)));
+    public void addShoppingCartNewItem(String user, int itemId) {
+        if (ShoppingCart.shoppingCart.get(user) == null) {
+                ShoppingCart.shoppingCart.put(user, new Order(user, readItemDao.readItem(itemId),
+                        orderStatus.readOrderStatus(1)));
         } else {
-            ShoppingCart.cart.get(user).addItem(supplyService.getItemAttributes(itemId, Item.class));
+            ShoppingCart.shoppingCart.get(user).addItem(readItemDao.readItem(itemId));
         }
     }
 }

@@ -1,3 +1,10 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Default entity  - Item
+ * @Inheritance(strategy = InheritanceType.JOINED) - Item and extended entities are located
+ * in the different tables
+ * @Data @NoArgsConstructor - Lombok utility for automatic generation getters, setters, toString, Equals, Hashcode
+ */
 package com.shs.entity.items;
 
 import com.shs.entity.reference.ItemStatus;
@@ -10,7 +17,6 @@ import javax.validation.constraints.Min;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorValue("Item")
 @NamedQueries({
         @NamedQuery(name = Item.ALL_ITEM_QUERY,
                 query = "select e from Item e"),
@@ -27,7 +33,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", updatable = false, nullable = false)
-    private int itemId;
+    private Integer itemId;
 
     @Min(value = 0, message = "The value must be positive")
     private Integer price;

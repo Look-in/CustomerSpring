@@ -1,10 +1,12 @@
+/**
+ *  @author Serg Shankunas <shserg2012@gmail.com>
+ *  Web configuration without web.xml
+ */
 package com.shs.config.web;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.*;
 
 @Configuration

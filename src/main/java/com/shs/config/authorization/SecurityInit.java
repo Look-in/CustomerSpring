@@ -1,4 +1,5 @@
 /**
+ * @author Serg Shankunas <shserg2012@gmail.com>
  * Register Spring Security with the existing ApplicationContext
  */
 package com.shs.config.authorization;

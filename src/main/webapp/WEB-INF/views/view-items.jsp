@@ -11,8 +11,8 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <link href="<c:url value="resources/global.css"/>" rel="stylesheet" type="text/css"/>
-    <link href="<c:url value="resources/item.css"/>" rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="../resources/global.css"/>" rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="../resources/item.css"/>" rel="stylesheet" type="text/css"/>
     <title>${param.type}</title>
 </head>
 <body>

@@ -1,13 +1,17 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * DAO that operates with Bicycles
+ */
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
-import com.shs.dao.supply.ChangeItem;
-import com.shs.dao.supply.ReadItem;
+import com.shs.dao.supply.ChangeItemDao;
+import com.shs.dao.supply.ReadItemDao;
 import com.shs.entity.items.Bicycle;
 import org.springframework.stereotype.Repository;
 
 @Repository("BicycleDao")
-public class BicycleJpaDao extends BaseJpaDao implements ReadItem, ChangeItem<Bicycle> {
+public class BicycleJpaDao extends BaseJpaDao implements ReadItemDao, ChangeItemDao<Bicycle> {
 
     @Override
     public Bicycle readItem(int itemId) {

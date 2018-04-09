@@ -1,3 +1,7 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Attributes for sorting collections
+ */
 package com.shs.entity.event;
 
 public enum AttributeToCompare{

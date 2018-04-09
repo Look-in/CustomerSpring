@@ -1,13 +1,17 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * DAO that operates with Clothes
+ */
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
-import com.shs.dao.supply.ChangeItem;
-import com.shs.dao.supply.ReadItem;
+import com.shs.dao.supply.ChangeItemDao;
+import com.shs.dao.supply.ReadItemDao;
 import com.shs.entity.items.Clothes;
 import org.springframework.stereotype.Repository;
 
 @Repository("ClothesDao")
-public class ClothesJpaDao extends BaseJpaDao implements ReadItem, ChangeItem<Clothes> {
+public class ClothesJpaDao extends BaseJpaDao implements ReadItemDao, ChangeItemDao<Clothes> {
 
     @Override
     public Clothes readItem(int itemId) {

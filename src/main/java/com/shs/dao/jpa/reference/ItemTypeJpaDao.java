@@ -1,3 +1,7 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * DAO for reading item types
+ */
 package com.shs.dao.jpa.reference;
 
 import com.shs.dao.jpa.BaseJpaDao;

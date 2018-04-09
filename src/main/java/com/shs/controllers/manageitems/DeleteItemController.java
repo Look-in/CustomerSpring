@@ -1,3 +1,7 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * This controller removes items from datasource using itemId
+ */
 package com.shs.controllers.manageitems;
 
 import com.shs.service.entity.PushItem;

@@ -1,3 +1,7 @@
+/**
+ * <code>Service</code> For reading List items and Item attributes<br>
+ * @author Serg Shankunas
+ */
 package com.shs.service.entity;
 
 import com.shs.entity.items.Item;

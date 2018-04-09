@@ -1,6 +1,6 @@
 /**
  * @author Serg Shankunas <shserg2012@gmail.com>
- * Redirection to view-item controller as the start page
+ * Redirection to the view-item controller as the start page
  * and also redirection after logging in
  */
 package com.shs.controllers;

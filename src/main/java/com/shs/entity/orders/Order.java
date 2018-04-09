@@ -1,3 +1,7 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * User Order consists of List Items and order attributes
+ */
 package com.shs.entity.orders;
 
 import com.shs.entity.items.Item;
@@ -13,11 +17,12 @@ import java.util.List;
 @Table(name = ("ORDERS"))
 @NamedQueries({
         @NamedQuery(name = Order.ALL_ORDER_QUERY,
-                query = "select e from Order e"),
+                query = "select e from Order e WHERE e.username = :username"),
         @NamedQuery(name = Order.ORDER_QUERY,
-                query = "select e from Order e WHERE e.username = :username")
+                query = "select e from Order e WHERE e.OrderId = :id")
 })
-@Data @NoArgsConstructor
+@Data
+@NoArgsConstructor
 public class Order {
 
     public static final String ORDER_QUERY = "Order.getOrder";
@@ -26,25 +31,25 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", updatable = false, nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     private Integer OrderId;
 
     @ManyToOne
     @JoinColumn(name = "order_status_id")
     private OrderStatus orderStatus;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "order_item",
-            joinColumns=@JoinColumn(name="order_id"),
-            inverseJoinColumns=@JoinColumn(name="item_ID"))
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_ID"))
     private List<Item> items = new LinkedList<>();
 
     private String username;
 
-    public Order(String username, Item item) {
-        orderStatus = new OrderStatus(1);
+    public Order(String username, Item item, OrderStatus orderStatus) {
         items.add(item);
         this.username = username;
+        this.orderStatus = orderStatus;
     }
 
     public void addItem(Item item) {

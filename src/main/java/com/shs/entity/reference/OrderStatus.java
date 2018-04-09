@@ -1,5 +1,10 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Reference Order Status
+ */
 package com.shs.entity.reference;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +17,7 @@ import javax.persistence.Table;
 @Table(name=("ORDER_STATUS"))
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class OrderStatus {
 
     @Id
@@ -20,7 +26,4 @@ public class OrderStatus {
 
     private String status;
 
-    public OrderStatus(int orderStatusId) {
-        this.orderStatusId = orderStatusId;
-    }
 }

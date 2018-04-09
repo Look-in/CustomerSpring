@@ -1,6 +1,10 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Reference Item Type
+ */
 package com.shs.entity.reference;
 
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,8 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name=("ITEM_TYPE"))
-@Data @NoArgsConstructor
+@Table(name = ("ITEM_TYPE"))
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ItemType {
 
     @Id
@@ -20,11 +26,5 @@ public class ItemType {
 
     @Column(name = "ITEM_TYPE")
     private String type;
-
-   public ItemType(int itemTypeId, String type) {
-        this.itemTypeId = itemTypeId;
-        this.type = type;
-    }
-
 }
 

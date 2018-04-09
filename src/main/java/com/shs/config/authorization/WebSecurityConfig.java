@@ -1,4 +1,5 @@
 /**
+ * @author Serg Shankunas <shserg2012@gmail.com>
  * Web security configuration with dataSource access
  * .antMatchers("/login/**") used for redirecting to the default Spring login window
  */

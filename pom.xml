@@ -14,6 +14,7 @@
 		<spring-framework-version>5.0.4.RELEASE</spring-framework-version>
 		<spring-security-version>5.0.3.RELEASE</spring-security-version>
 		<hibernate-version>5.2.16.Final</hibernate-version>
+		<slf4j-version>1.7.25</slf4j-version>
 	</properties>
     
 	<dependencies>
@@ -106,7 +107,23 @@
 			<artifactId>hibernate-validator-cdi</artifactId>
 			<version>6.0.9.Final</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+
+    </dependencies>
 
 	<build>
 		<finalName>customer</finalName>

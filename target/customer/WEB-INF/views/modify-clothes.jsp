@@ -9,8 +9,8 @@
   Страница ввода/изменения Clothes.
 --%>
 <head>
-    <link href="<c:url value="resources/global.css"/>" rel="stylesheet" type="text/css"/>
-    <link href="<c:url value="resources/item.css"/>" rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="../resources/global.css"/>" rel="stylesheet" type="text/css"/>
+    <link href="<c:url value="../resources/item.css"/>" rel="stylesheet" type="text/css"/>
     <title>${param.type} ${param.action}</title>
 </head>
 <%@include file="includes/header.jsp" %>

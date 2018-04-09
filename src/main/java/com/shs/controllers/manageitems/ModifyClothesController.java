@@ -1,3 +1,8 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * This controller both operates the clothes item and
+ * displays the attributes of the clothes for updating or adding
+ */
 package com.shs.controllers.manageitems;
 
 import com.shs.entity.items.Clothes;
@@ -16,7 +21,6 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/modify-clothes")
-@SessionAttributes("item")
 public class ModifyClothesController {
 
     @Autowired
@@ -49,12 +53,11 @@ public class ModifyClothesController {
     public void doGet() { }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String doPost(Clothes item, RedirectAttributes redirectAttributes, SessionStatus sessionStatus) {
+    public String doPost(Clothes item, RedirectAttributes redirectAttributes) {
         pushItem.pushItem(item);
         redirectAttributes.addAttribute("itemTypeId", item.getItemType().getItemTypeId());
         redirectAttributes.addAttribute("type", item.getItemType().getType());
         redirectAttributes.addAttribute("requestKey", "Clothes saved successfully");
-        sessionStatus.setComplete();
         return "redirect:/view-items";
     }
 }

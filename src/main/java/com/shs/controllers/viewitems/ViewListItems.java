@@ -1,3 +1,7 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * This controller displays all items in the shop
+ */
 package com.shs.controllers.viewitems;
 
 import com.shs.entity.event.ShoppingCart;
@@ -40,8 +44,8 @@ public class ViewListItems {
     //transfer the number of items in the cart
     @ModelAttribute(value = "countBasketItem")
     public Integer hasBasket() {
-        return (ShoppingCart.cart.get(SecurityContextHolder.getContext().getAuthentication().getName()) != null ?
-                ShoppingCart.cart.get(SecurityContextHolder.getContext().getAuthentication().getName()).getItems().size() :
+        return (ShoppingCart.shoppingCart.get(SecurityContextHolder.getContext().getAuthentication().getName()) != null ?
+                ShoppingCart.shoppingCart.get(SecurityContextHolder.getContext().getAuthentication().getName()).getItems().size() :
                 null);
     }
 

@@ -1,3 +1,8 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Entity Bicycle extends Item and has a joined table DB stucture
+ * @PrimaryKeyJoinColumn(name="id") - primary key that has a foreing dependency
+ */
 package com.shs.entity.items;
 
 import com.shs.entity.reference.ItemType;
@@ -9,7 +14,6 @@ import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@DiscriminatorValue("Bicycle")
 @PrimaryKeyJoinColumn(name="id")
 @Data
 @NoArgsConstructor

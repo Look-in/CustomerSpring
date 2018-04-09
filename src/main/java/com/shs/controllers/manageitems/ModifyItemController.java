@@ -1,3 +1,8 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * This controller both operates the default items item and
+ * displays the attributes of the item for updating or adding
+ */
 package com.shs.controllers.manageitems;
 
 import com.shs.entity.items.Item;
@@ -31,14 +36,15 @@ public class ModifyItemController {
     /**
      * For every request for this controller, this will
      * create a Item instance
-     * */
+     */
     @ModelAttribute(value = "item")
     public Item newRequest(@RequestParam(required = false) Integer itemId,
-                              @RequestParam(required = false) Integer itemTypeId,
-                              @RequestParam(required = false) String type) {
+                           @RequestParam(required = false) Integer itemTypeId,
+                           @RequestParam(required = false) String type) {
         return (itemId != null ? supplyService.getItemAttributes(itemId, Item.class) :
-                new Item(new ItemType(itemTypeId,type)));
+                new Item(new ItemType(itemTypeId, type)));
     }
+
 
     @ModelAttribute(value = "statuses")
     public List<ItemStatus> newRequest() {
@@ -46,7 +52,8 @@ public class ModifyItemController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public void doGet() { }
+    public void doGet() {
+    }
 
     @RequestMapping(method = RequestMethod.POST)
 

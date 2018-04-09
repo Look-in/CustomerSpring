@@ -1,7 +1,11 @@
+/**
+ * Implements service for reading item attributes and List of items by type<br>
+ * @author Serg Shankunas
+ */
 package com.shs.service.entity;
 
-import com.shs.dao.supply.ReadItem;
-import com.shs.dao.supply.ReadListItems;
+import com.shs.dao.supply.ReadItemDao;
+import com.shs.dao.supply.ReadListItemsDao;
 import com.shs.entity.items.Bicycle;
 import com.shs.entity.items.Clothes;
 import com.shs.entity.items.Item;
@@ -16,19 +20,19 @@ public class SupplyServiceImpl implements SupplyService {
 
     @Autowired
     @Qualifier("ItemDao")
-    private ReadListItems readItems;
+    private ReadListItemsDao readItems;
 
     @Autowired
     @Qualifier("ClothesDao")
-    private ReadItem readClothes;
+    private ReadItemDao readClothes;
 
     @Autowired
     @Qualifier("BicycleDao")
-    private ReadItem readBicycle;
+    private ReadItemDao readBicycle;
 
     @Autowired
     @Qualifier("ItemDao")
-    private ReadItem readItem;
+    private ReadItemDao readItemDao;
 
 
     @Override
@@ -44,7 +48,7 @@ public class SupplyServiceImpl implements SupplyService {
         if (itemClass == Bicycle.class) {
             return readBicycle.readItem(itemId);
         }
-        return readItem.readItem(itemId);
+        return readItemDao.readItem(itemId);
     }
 
 }

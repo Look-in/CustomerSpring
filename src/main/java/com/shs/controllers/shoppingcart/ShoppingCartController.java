@@ -1,3 +1,8 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * This controller operates the shopping cart and
+ * displays the items in the user shopping cart
+ */
 package com.shs.controllers.shoppingcart;
 
 import com.shs.entity.event.ShoppingCart;
@@ -15,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-
 @Controller
 @RequestMapping("/shopping-cart")
 public class ShoppingCartController {
@@ -27,13 +31,13 @@ public class ShoppingCartController {
     GetCart shoppingCart;
 
     /**
-     * For every request for this controller, item will
-     * be added to the cart
+     * For every request for this controller, items will
+     * be added to the view
      */
     @ModelAttribute(value = "item")
     public List<Item> newRequest(Authentication authentication) {
-        if (ShoppingCart.cart.get(authentication.getName()) != null) {
-            return ShoppingCart.cart.get(authentication.getName()).getItems();
+        if (ShoppingCart.shoppingCart.get(authentication.getName()) != null) {
+            return ShoppingCart.shoppingCart.get(authentication.getName()).getItems();
         }
         return null;
     }
@@ -49,22 +53,24 @@ public class ShoppingCartController {
     @RequestMapping(value = "/show-orders", method = RequestMethod.GET)
     public ModelAndView doGetCart(Authentication authentication) {
         ModelAndView modelAndView = new ModelAndView("/view-items");
-        //System.out.println(shoppingCart.readUserOrders(authentication.getName()).get(0).getItems().size());
-        //modelAndView.addObject("item",shoppingCart.readUserOrders(authentication.getName()).get(0));
+        if (!shoppingCart.readUserOrders(authentication.getName()).isEmpty()) {
+            //for debugging display only the first order from the list
+            modelAndView.addObject("item", shoppingCart.readUserOrders(authentication.getName()).get(0).getItems());
+        }
         return modelAndView;
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public String doPost(@RequestParam int itemId, Authentication authentication) {
-        changeCart.updateShoppingCart(authentication.getName(), itemId);
+        changeCart.addShoppingCartNewItem(authentication.getName(), itemId);
         return "redirect:/view-items";
     }
 
     @RequestMapping(value = "/put", method = RequestMethod.POST)
     public String doPut(Authentication authentication) {
         String user = authentication.getName();
-        if (ShoppingCart.cart.get(user) != null) {
-            changeCart.putOrder(user, ShoppingCart.cart.get(user));
+        if (ShoppingCart.shoppingCart.get(user) != null) {
+            changeCart.putOrder(user, ShoppingCart.shoppingCart.get(user));
         }
         return "redirect:/view-items";
     }

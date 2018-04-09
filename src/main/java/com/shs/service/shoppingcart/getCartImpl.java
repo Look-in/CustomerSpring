@@ -1,6 +1,10 @@
+/**
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ * Implements methods for reading user orders
+ */
 package com.shs.service.shoppingcart;
 
-import com.shs.dao.order.ReadShoppingCart;
+import com.shs.dao.order.ReadShoppingCartDao;
 import com.shs.entity.orders.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,8 +15,7 @@ import java.util.List;
 public class getCartImpl implements GetCart {
 
     @Autowired
-    private ReadShoppingCart readShoppingCart;
-
+    private ReadShoppingCartDao readShoppingCartDao;
 
     @Override
     public Order readOrder(int orderId) {
@@ -21,6 +24,6 @@ public class getCartImpl implements GetCart {
 
     @Override
     public List<Order> readUserOrders(String username) {
-        return readShoppingCart.readUserOrders(username);
+        return readShoppingCartDao.readUserOrders(username);
     }
 }

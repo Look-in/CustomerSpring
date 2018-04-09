@@ -1,6 +1,10 @@
+/**
+ * <code>Service</code> Implements methods for changing items<br>
+ * @author Serg Shankunas
+ */
 package com.shs.service.entity;
 
-import com.shs.dao.supply.ChangeItem;
+import com.shs.dao.supply.ChangeItemDao;
 import com.shs.entity.items.Bicycle;
 import com.shs.entity.items.Clothes;
 import com.shs.entity.items.Item;
@@ -16,37 +20,36 @@ public class PushItemImpl implements PushItem {
 
     @Autowired
     @Qualifier("ClothesDao")
-    private ChangeItem pushClothes;
+    private ChangeItemDao pushClothes;
 
     @Autowired
     @Qualifier("BicycleDao")
-    private ChangeItem pushBicycle;
+    private ChangeItemDao pushBicycle;
 
     @Autowired
     @Qualifier("ItemDao")
-    private ChangeItem pushDefaultItem;
+    private ChangeItemDao pushDefaultItem;
 
+    /**
+     * Factory method for changing Item by ItemClass
+     */
     @Override
     public void pushItem(Item item) {
-        ChangeItem push;
+        ChangeItemDao push;
         if (item instanceof Bicycle) {
             push = pushBicycle;
         } else {
             if (item instanceof Clothes) {
                 push = pushClothes;
             } else {
-                push=pushDefaultItem;
+                push = pushDefaultItem;
             }
         }
-            if (item.getItemId() == 0) {
+            if (item.getItemId() == null) {
                 push.create(item);
             }
             else {
                 push.update(item);
-                //delete after debugging
-              //  item.setPrice(-1);
-                //push.update(item);
-                //to here
             }
         }
 

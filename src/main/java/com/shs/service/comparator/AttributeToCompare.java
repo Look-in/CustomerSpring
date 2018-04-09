@@ -2,7 +2,7 @@
  * @author Serg Shankunas <shserg2012@gmail.com>
  * Attributes for sorting collections
  */
-package com.shs.entity.event;
+package com.shs.service.comparator;
 
 public enum AttributeToCompare{
     PRICE("Price"),

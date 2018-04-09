@@ -4,10 +4,10 @@
  */
 package com.shs.controllers.viewitems;
 
-import com.shs.entity.event.ShoppingCart;
+import com.shs.service.shoppingcart.ShoppingCart;
 import com.shs.entity.reference.ItemType;
-import com.shs.entity.comparator.ItemComparator;
-import com.shs.entity.event.AttributeToCompare;
+import com.shs.service.comparator.ItemComparator;
+import com.shs.service.comparator.AttributeToCompare;
 import com.shs.entity.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;

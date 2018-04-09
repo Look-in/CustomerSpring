@@ -2,9 +2,8 @@
  * @author Serg Shankunas <shserg2012@gmail.com>
  * Sorting the original collection of items according to the received attribute
  */
-package com.shs.entity.comparator;
+package com.shs.service.comparator;
 
-import com.shs.entity.event.AttributeToCompare;
 import com.shs.entity.items.Item;
 import java.util.Collections;
 import java.util.List;

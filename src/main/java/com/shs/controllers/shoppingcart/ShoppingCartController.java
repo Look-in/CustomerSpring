@@ -5,7 +5,7 @@
  */
 package com.shs.controllers.shoppingcart;
 
-import com.shs.entity.event.ShoppingCart;
+import com.shs.service.shoppingcart.ShoppingCart;
 import com.shs.entity.items.Item;
 import com.shs.service.shoppingcart.ChangeCart;
 import com.shs.service.shoppingcart.GetCart;

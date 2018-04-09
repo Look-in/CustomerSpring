@@ -8,7 +8,6 @@ import com.shs.dao.order.PutShoppingCartDao;
 import com.shs.dao.reference.OrderStatusDao;
 import com.shs.dao.supply.ReadItemDao;
 import com.shs.entity.orders.Order;
-import com.shs.entity.event.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

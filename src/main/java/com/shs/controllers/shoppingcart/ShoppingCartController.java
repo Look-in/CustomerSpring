@@ -1,8 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * This controller operates the shopping cart and
- * displays the items in the user shopping cart
- */
 package com.shs.controllers.shoppingcart;
 
 import com.shs.service.shoppingcart.ShoppingCart;
@@ -20,6 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+/**
+ * This controller operates the shopping cart and
+ * displays the items in the user shopping cart.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Controller
 @RequestMapping("/shopping-cart")
 public class ShoppingCartController {
@@ -32,7 +33,7 @@ public class ShoppingCartController {
 
     /**
      * For every request for this controller, items will
-     * be added to the view
+     * be added to the view.
      */
     @ModelAttribute(value = "item")
     public List<Item> newRequest(Authentication authentication) {
@@ -46,15 +47,20 @@ public class ShoppingCartController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView doGet() {
         ModelAndView modelAndView = new ModelAndView("/view-items");
-        modelAndView.addObject("action","shopping");
+        modelAndView.addObject("action", "shopping");
         return modelAndView;
     }
 
+    /**
+     * For debugging display only the first order from the list.
+     *
+     * @param authentication
+     * @return ModelandView with List<Item> from the first order
+     */
     @RequestMapping(value = "/show-orders", method = RequestMethod.GET)
     public ModelAndView doGetCart(Authentication authentication) {
         ModelAndView modelAndView = new ModelAndView("/view-items");
         if (!shoppingCart.readUserOrders(authentication.getName()).isEmpty()) {
-            //for debugging display only the first order from the list
             modelAndView.addObject("item", shoppingCart.readUserOrders(authentication.getName()).get(0).getItems());
         }
         return modelAndView;

@@ -1,8 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * This controller both operates the bicycle item and
- * displays the attributes of the bicycle for updating or adding
- */
 package com.shs.controllers.manageitems;
 
 import com.shs.entity.items.Bicycle;
@@ -19,6 +14,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+/**
+ * This controller both operates the bicycle item and
+ * displays the attributes of the bicycle for updating or adding.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Controller
 @RequestMapping("/modify-bicycles")
 public class ModifyBicycleController {
@@ -34,7 +35,7 @@ public class ModifyBicycleController {
 
     /**
      * For every request for this controller, this will
-     * create a Item instance
+     * create a Item instance.
      */
     @ModelAttribute(value = "item")
     public Bicycle newRequest(@RequestParam(required = false) Integer itemId,

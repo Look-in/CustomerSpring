@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * DAO for reading order statuses
- */
 package com.shs.dao.jpa.reference;
 
 import com.shs.dao.jpa.BaseJpaDao;
@@ -11,9 +7,15 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * DAO for reading order statuses.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Repository
 public class OrderStatusJpaDao extends BaseJpaDao implements OrderStatusDao {
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<OrderStatus> readOrderStatuses() {
         return getEntityManager().createQuery("select e from OrderStatus e").getResultList();

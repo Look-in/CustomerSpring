@@ -1,14 +1,20 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * Sorting the original collection of items according to the received attribute
- */
-package com.shs.service.comparator;
+package com.shs.utils;
 
 import com.shs.entity.items.Item;
+import com.shs.service.reference.AttributeToCompare;
+
 import java.util.Collections;
 import java.util.List;
 
-public class ItemComparator  {
+/**
+ * Sorting the original collection of items according to the received attribute.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
+public class ItemSortUtil {
+
+    private ItemSortUtil() {
+    }
 
     public static void compare(List<Item> item, AttributeToCompare sortBy) {
         switch (sortBy) {

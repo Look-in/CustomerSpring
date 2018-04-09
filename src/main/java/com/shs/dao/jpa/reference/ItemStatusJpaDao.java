@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * DAO for reading item statuses
- */
 package com.shs.dao.jpa.reference;
 
 import com.shs.dao.jpa.BaseJpaDao;
@@ -11,6 +7,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * DAO for reading item statuses
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Repository
 public class ItemStatusJpaDao extends BaseJpaDao implements ItemStatusDao {
 

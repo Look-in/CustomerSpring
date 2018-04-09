@@ -7,7 +7,7 @@
   User: shankunassv
   Date: 28.02.2018
   Time: 22:01
-  Страница ввода/изменения Clothes.
+  Страница ввода/изменения Bicycle.
 --%>
 <head>
     <link href="<c:url value="../resources/global.css"/>" rel="stylesheet" type="text/css"/>

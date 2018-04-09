@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * Reference Item Type
- */
 package com.shs.entity.reference;
 
 import lombok.AllArgsConstructor;
@@ -13,6 +9,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Reference Item Type.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Entity
 @Table(name = ("ITEM_TYPE"))
 @Data

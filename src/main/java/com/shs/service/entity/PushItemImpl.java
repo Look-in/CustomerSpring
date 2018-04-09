@@ -1,7 +1,3 @@
-/**
- * <code>Service</code> Implements methods for changing items<br>
- * @author Serg Shankunas
- */
 package com.shs.service.entity;
 
 import com.shs.dao.supply.ChangeItemDao;
@@ -14,6 +10,11 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
+/**
+ * <code>Service</code> Implements methods for changing items.
+ *
+ * @author Serg Shankunas
+ */
 @Service
 @Transactional
 public class PushItemImpl implements PushItem {
@@ -45,16 +46,15 @@ public class PushItemImpl implements PushItem {
                 push = pushDefaultItem;
             }
         }
-            if (item.getItemId() == null) {
-                push.create(item);
-            }
-            else {
-                push.update(item);
-            }
-        }
-
-        @Override
-        public void deleteItem (int itemId){
-        pushDefaultItem.delete(itemId);
+        if (item.getItemId() == null) {
+            push.create(item);
+        } else {
+            push.update(item);
         }
     }
+
+    @Override
+    public void deleteItem(int itemId) {
+        pushDefaultItem.delete(itemId);
+    }
+}

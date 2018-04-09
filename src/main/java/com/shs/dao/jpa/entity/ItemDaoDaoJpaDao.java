@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * DAO that operates with default items
- */
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
@@ -14,6 +10,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * DAO that operates with default items.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Repository("ItemDao")
 public class ItemDaoDaoJpaDao extends BaseJpaDao implements ReadItemDao, ReadListItemsDao, ChangeItemDao<Item> {
 

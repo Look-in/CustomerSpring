@@ -1,7 +1,3 @@
-/**
- *  @author Serg Shankunas <shserg2012@gmail.com>
- *  Web configuration without web.xml
- */
 package com.shs.config.web;
 
 import org.springframework.context.annotation.ComponentScan;
@@ -9,10 +5,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.config.annotation.*;
 
+/**
+ * Web configuration without web.xml.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Configuration
 @EnableWebMvc
-@ComponentScan({"com.shs.config.authorization", "com.shs.controllers",  "com.shs.service" , "com.shs.dao" })
-@ImportResource({"classpath:spring/dao.xml" , "classpath:spring/exception.xml"})
+@ComponentScan({"com.shs.config.authorization", "com.shs.controllers", "com.shs.service", "com.shs.dao"})
+@ImportResource({"classpath:spring/dao.xml", "classpath:spring/exception.xml"})
 public class WebConfig implements WebMvcConfigurer {
 
     @Override

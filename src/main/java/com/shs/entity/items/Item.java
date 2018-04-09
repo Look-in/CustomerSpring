@@ -1,10 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * Default entity  - Item
- * @Inheritance(strategy = InheritanceType.JOINED) - Item and extended entities are located
- * in the different tables
- * @Data @NoArgsConstructor - Lombok utility for automatic generation getters, setters, toString, Equals, Hashcode
- */
 package com.shs.entity.items;
 
 import com.shs.entity.reference.ItemStatus;
@@ -15,6 +8,14 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 
+/**
+ * Default entity  - Item
+ * Inheritance(strategy = InheritanceType.JOINED) - Item and extended entities are located
+ * in the different tables
+ * Data NoArgsConstructor - Lombok utility for automatic generation getters, setters, toString, Equals, Hashcode.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({
@@ -23,7 +24,8 @@ import javax.validation.constraints.Min;
         @NamedQuery(name = Item.ITEM_QUERY,
                 query = "select e from Item e WHERE e.itemType.itemTypeId = :id")
 })
-@Data @NoArgsConstructor
+@Data
+@NoArgsConstructor
 public class Item {
 
     public static final String ITEM_QUERY = "Item.getItem";
@@ -32,7 +34,7 @@ public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id", updatable = false, nullable = false)
+    @Column(name = "id", updatable = false, nullable = false)
     private Integer itemId;
 
     @Min(value = 0, message = "The value must be positive")
@@ -43,15 +45,15 @@ public class Item {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name="item_status_id")
+    @JoinColumn(name = "item_status_id")
     private ItemStatus itemStatus;
 
     @ManyToOne
-    @JoinColumn(name="item_type_id")
+    @JoinColumn(name = "item_type_id")
     private ItemType itemType;
 
     public Item(ItemType itemType) {
-        this.itemType=itemType;
+        this.itemType = itemType;
     }
 }
 

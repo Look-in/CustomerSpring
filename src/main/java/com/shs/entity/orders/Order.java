@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * User Order consists of List Items and order attributes
- */
 package com.shs.entity.orders;
 
 import com.shs.entity.items.Item;
@@ -13,6 +9,11 @@ import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * User Order consists of List Items and order attributes.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Entity
 @Table(name = ("ORDERS"))
 @NamedQueries({

@@ -1,10 +1,11 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * Attributes for sorting collections
- */
-package com.shs.service.comparator;
+package com.shs.service.reference;
 
-public enum AttributeToCompare{
+/**
+ * Attributes for sorting collections.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
+public enum AttributeToCompare {
     PRICE("Price"),
     PRICEDESC("Price DESC"),
     NAME("Name"),
@@ -12,7 +13,7 @@ public enum AttributeToCompare{
 
     private final String displayName;
 
-    AttributeToCompare (String displayName) {
+    AttributeToCompare(String displayName) {
         this.displayName = displayName;
     }
 

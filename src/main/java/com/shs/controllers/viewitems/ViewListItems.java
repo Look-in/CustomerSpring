@@ -1,13 +1,9 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * This controller displays all items in the shop
- */
 package com.shs.controllers.viewitems;
 
 import com.shs.service.shoppingcart.ShoppingCart;
 import com.shs.entity.reference.ItemType;
-import com.shs.service.comparator.ItemComparator;
-import com.shs.service.comparator.AttributeToCompare;
+import com.shs.utils.ItemSortUtil;
+import com.shs.service.reference.AttributeToCompare;
 import com.shs.entity.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,6 +17,11 @@ import com.shs.service.entity.SupplyService;
 
 import java.util.List;
 
+/**
+ * This controller displays all items in the shop.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Controller
 @RequestMapping("/view-items")
 public class ViewListItems {
@@ -36,12 +37,16 @@ public class ViewListItems {
                                  @RequestParam(required = false) AttributeToCompare sortingBy) {
         List<Item> items = supplyService.getItems(itemTypeId);
         if (sortingBy != null) {
-            ItemComparator.compare(items, sortingBy);
+            ItemSortUtil.compare(items, sortingBy);
         }
         return items;
     }
 
-    //transfer the number of items in the cart
+    /**
+     * Transfer the number of items in the cart.
+     *
+     * @return Integer - null or count items
+     */
     @ModelAttribute(value = "countBasketItem")
     public Integer hasBasket() {
         return (ShoppingCart.shoppingCart.get(SecurityContextHolder.getContext().getAuthentication().getName()) != null ?

@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * DAO that operates with Clothes
- */
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
@@ -10,6 +6,11 @@ import com.shs.dao.supply.ReadItemDao;
 import com.shs.entity.items.Clothes;
 import org.springframework.stereotype.Repository;
 
+/**
+ * DAO that operates with Clothes.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Repository("ClothesDao")
 public class ClothesJpaDao extends BaseJpaDao implements ReadItemDao, ChangeItemDao<Clothes> {
 

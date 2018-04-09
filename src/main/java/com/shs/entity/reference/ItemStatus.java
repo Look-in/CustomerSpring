@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * Reference Item Status
- */
 package com.shs.entity.reference;
 
 import lombok.Data;
@@ -12,6 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Reference Item Status.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Entity
 @Table(name = ("ITEM_STATUS"))
 @Data

@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * This controller removes items from datasource using itemId
- */
 package com.shs.controllers.manageitems;
 
 import com.shs.service.entity.PushItem;
@@ -12,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+/**
+ * This controller removes items from datasource using itemId.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Controller
 @RequestMapping("/delete")
 public class DeleteItemController {
@@ -19,7 +20,7 @@ public class DeleteItemController {
     @Autowired
     private PushItem pushItem;
 
-    @RequestMapping(method=RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public String doDelete(@RequestParam Integer itemId,
                            @RequestParam Integer itemTypeId,
                            @RequestParam String type,

@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * DAO that operates with Bicycles
- */
 package com.shs.dao.jpa.entity;
 
 import com.shs.dao.jpa.BaseJpaDao;
@@ -10,6 +6,11 @@ import com.shs.dao.supply.ReadItemDao;
 import com.shs.entity.items.Bicycle;
 import org.springframework.stereotype.Repository;
 
+/**
+ * DAO that operates with Bicycles.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Repository("BicycleDao")
 public class BicycleJpaDao extends BaseJpaDao implements ReadItemDao, ChangeItemDao<Bicycle> {
 

@@ -1,8 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * This controller both operates the clothes item and
- * displays the attributes of the clothes for updating or adding
- */
 package com.shs.controllers.manageitems;
 
 import com.shs.entity.items.Clothes;
@@ -19,6 +14,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+/**
+ * This controller both operates the clothes item and
+ * displays the attributes of the clothes for updating or adding.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Controller
 @RequestMapping("/modify-clothes")
 public class ModifyClothesController {
@@ -34,14 +35,14 @@ public class ModifyClothesController {
 
     /**
      * For every request for this controller, this will
-     * create a Item instance
-     * */
+     * create a Item instance.
+     */
     @ModelAttribute(value = "item")
     public Clothes newRequest(@RequestParam(required = false) Integer itemId,
                               @RequestParam(required = false) Integer itemTypeId,
                               @RequestParam(required = false) String type) {
         return (itemId != null ? (Clothes) supplyService.getItemAttributes(itemId, Clothes.class) :
-                new Clothes(new ItemType(itemTypeId,type)));
+                new Clothes(new ItemType(itemTypeId, type)));
     }
 
     @ModelAttribute(value = "statuses")
@@ -50,7 +51,8 @@ public class ModifyClothesController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public void doGet() { }
+    public void doGet() {
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public String doPost(Clothes item, RedirectAttributes redirectAttributes) {

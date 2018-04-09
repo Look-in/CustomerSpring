@@ -1,7 +1,3 @@
-/**
- * Implements service for reading item attributes and List of items by type<br>
- * @author Serg Shankunas
- */
 package com.shs.service.entity;
 
 import com.shs.dao.supply.ReadItemDao;
@@ -15,6 +11,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Implements service for reading item attributes and List of items by type.
+ *
+ * @author Serg Shankunas
+ */
 @Service
 public class SupplyServiceImpl implements SupplyService {
 

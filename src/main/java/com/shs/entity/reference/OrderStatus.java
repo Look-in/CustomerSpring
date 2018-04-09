@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * Reference Order Status
- */
 package com.shs.entity.reference;
 
 import lombok.AllArgsConstructor;
@@ -13,8 +9,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Reference Order Status.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Entity
-@Table(name=("ORDER_STATUS"))
+@Table(name = ("ORDER_STATUS"))
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

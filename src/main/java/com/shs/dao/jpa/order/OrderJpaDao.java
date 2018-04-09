@@ -1,7 +1,3 @@
-/**
- * @author Serg Shankunas <shserg2012@gmail.com>
- * DAO that operates with customer orders
- */
 package com.shs.dao.jpa.order;
 
 import com.shs.dao.jpa.BaseJpaDao;
@@ -12,6 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * DAO that operates with customer orders.
+ *
+ * @author Serg Shankunas <shserg2012@gmail.com>
+ */
 @Repository("OrderDao")
 public class OrderJpaDao extends BaseJpaDao implements PutShoppingCartDao, ReadShoppingCartDao {
 
@@ -25,8 +26,7 @@ public class OrderJpaDao extends BaseJpaDao implements PutShoppingCartDao, ReadS
     }
 
     /**
-     * Reading order attributes by Id
-     * (in developing)
+     * Reading order attributes by Id (in developing).
      */
     @Override
     public Order readOrder(int orderId) {
@@ -36,6 +36,7 @@ public class OrderJpaDao extends BaseJpaDao implements PutShoppingCartDao, ReadS
     /**
      * Reading list of customer orders by Username
      */
+    @SuppressWarnings("unchecked")
     @Override
     public List<Order> readUserOrders(String username) {
         return getEntityManager().createNamedQuery(Order.ALL_ORDER_QUERY).setParameter("username", username)

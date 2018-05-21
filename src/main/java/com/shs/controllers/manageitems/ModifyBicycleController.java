@@ -8,6 +8,7 @@ import com.shs.service.entity.SupplyService;
 import com.shs.service.reference.ItemStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -24,14 +25,21 @@ import java.util.List;
 @RequestMapping("/modify-bicycles")
 public class ModifyBicycleController {
 
-    @Autowired
     private SupplyService supplyService;
 
-    @Autowired
     private ItemStatusService itemStatus;
 
-    @Autowired
     private PushItem pushItem;
+
+    @Autowired
+    public ModifyBicycleController(SupplyService supplyService, ItemStatusService itemStatus, PushItem pushItem) {
+        Assert.notNull(supplyService, "SupplyService must not be null!");
+        Assert.notNull(itemStatus, "ItemStatusService must not be null!");
+        Assert.notNull(pushItem, "PushItem must not be null!");
+        this.itemStatus = itemStatus;
+        this.pushItem = pushItem;
+        this.supplyService = supplyService;
+    }
 
     /**
      * For every request for this controller, this will

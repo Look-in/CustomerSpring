@@ -8,6 +8,7 @@ import com.shs.entity.items.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,7 @@ import com.shs.service.reference.ItemTypeService;
 import com.shs.service.entity.SupplyService;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * This controller displays all items in the shop.
@@ -26,11 +28,17 @@ import java.util.List;
 @RequestMapping("/view-items")
 public class ViewListItems {
 
-    @Autowired
     private SupplyService supplyService;
 
-    @Autowired
     private ItemTypeService itemType;
+
+    @Autowired
+    public ViewListItems(SupplyService supplyService, ItemTypeService itemType) {
+        Objects.requireNonNull(supplyService, "SupplyService must not be null!");
+        Objects.requireNonNull(itemType, "ItemTypeService must not be null!");
+        this.itemType = itemType;
+        this.supplyService = supplyService;
+    }
 
     @ModelAttribute(value = "item")
     public List<Item> newRequest(@RequestParam(required = false, defaultValue = "0") int itemTypeId,

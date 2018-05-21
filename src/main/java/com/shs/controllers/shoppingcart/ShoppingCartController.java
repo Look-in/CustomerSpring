@@ -26,10 +26,10 @@ import java.util.List;
 public class ShoppingCartController {
 
     @Autowired
-    ChangeCart changeCart;
+    private ChangeCart changeCart;
 
     @Autowired
-    GetCart shoppingCart;
+    private GetCart shoppingCart;
 
     /**
      * For every request for this controller, items will

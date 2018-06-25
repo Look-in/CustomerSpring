@@ -1,5 +1,6 @@
 package com.shs.dao.reference;
 
+import com.shs.dao.supply.CrudDao;
 import com.shs.entity.reference.ItemType;
 
 import java.util.List;
@@ -10,9 +11,7 @@ import java.util.List;
  *
  * @author Serg Shankunas <shserg2012@gmail.com>
  */
-public interface ItemTypeDao {
+public interface ItemTypeDao extends CrudDao<Integer, ItemType> {
 
     List<ItemType> readItemTypes();
-
-    ItemType readItemType(int itemTypeId);
 }

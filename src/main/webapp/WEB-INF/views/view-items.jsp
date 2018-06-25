@@ -54,7 +54,7 @@
         <a href="${view}" title="">ALL</a>
         <c:forEach var="itemType" items="${itemTypes}">
             <c:url var="view" value="view-items">
-                <c:param name="itemTypeId" value="${itemType.itemTypeId}"/>
+                <c:param name="itemTypeId" value="${itemType.id}"/>
                 <c:param name="type" value="${itemType.type}"/>
                 <c:param name="sortingBy" value="${param.sortingBy}"/>
             </c:url>
@@ -77,7 +77,7 @@
                         : 'item'}"/>
                     <div class="item edit">
                         <c:url var="editurl" value="modify-${type}">
-                            <c:param name="itemId" value="${elem.itemId}"/>
+                            <c:param name="itemId" value="${elem.id}"/>
                             <c:param name="type" value="${elem.itemType.type}"/>
                             <c:param name="itemTypeId" value="${ param.itemTypeId }"/>
                         </c:url>
@@ -88,7 +88,7 @@
                                    action="/delete">
                             <input type="hidden" name="itemTypeId" value="${ param.itemTypeId }">
                             <input type="hidden" name="type" value="${ param.type }">
-                            <input type="hidden" name="itemId" value="${elem.itemId}">
+                            <input type="hidden" name="itemId" value="${elem.id}">
                             <input class="btn-delete" type="submit" value="Delete"/>
                         </form:form>
                     </div>
@@ -100,13 +100,13 @@
                         : 'item'}"/>
                     <div class="item edit">
                         <c:url var="viewurl" value="/shopping-cart/show-${type}">
-                            <c:param name="itemId" value="${elem.itemId}"/>
+                            <c:param name="itemId" value="${elem.id}"/>
                         </c:url>
                         <a href="${viewurl}">Show</a>
                     </div>
                     <div class="item delete">
                         <form:form method="POST" name="shopping-cart" action="/shopping-cart">
-                            <input type="hidden" name="itemId" value="${elem.itemId}">
+                            <input type="hidden" name="itemId" value="${elem.id}">
                             <input class="btn-delete" type="submit" value="Add cart"/>
                         </form:form>
                     </div>

@@ -65,7 +65,7 @@ public class ModifyBicycleController {
     @RequestMapping(method = RequestMethod.POST)
     public String doPost(Bicycle item, RedirectAttributes redirectAttributes) {
         pushItem.pushItem(item);
-        redirectAttributes.addAttribute("itemTypeId", item.getItemType().getItemTypeId());
+        redirectAttributes.addAttribute("itemTypeId", item.getItemType().getId());
         redirectAttributes.addAttribute("type", item.getItemType().getType());
         redirectAttributes.addAttribute("requestKey", "Bicycle saved successfully");
         return "redirect:/view-items";

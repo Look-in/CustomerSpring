@@ -25,14 +25,18 @@ import java.util.List;
 @SessionAttributes("item")
 public class ModifyItemController {
 
-    @Autowired
-    private SupplyService supplyService;
+    private final SupplyService supplyService;
+
+    private final ItemStatusService itemStatus;
+
+    private final PushItem pushItem;
 
     @Autowired
-    private ItemStatusService itemStatus;
-
-    @Autowired
-    private PushItem pushItem;
+    public ModifyItemController(SupplyService supplyService, ItemStatusService itemStatus, PushItem pushItem) {
+        this.supplyService = supplyService;
+        this.itemStatus = itemStatus;
+        this.pushItem = pushItem;
+    }
 
     /**
      * For every request for this controller, this will
@@ -60,7 +64,7 @@ public class ModifyItemController {
 
     public String doPost(Item item, RedirectAttributes redirectAttributes, SessionStatus sessionStatus) {
         pushItem.pushItem(item);
-        redirectAttributes.addAttribute("itemTypeId", item.getItemType().getItemTypeId());
+        redirectAttributes.addAttribute("itemTypeId", item.getItemType().getId());
         redirectAttributes.addAttribute("type", item.getItemType().getType());
         redirectAttributes.addAttribute("requestKey", "Item saved successfully");
         sessionStatus.setComplete();

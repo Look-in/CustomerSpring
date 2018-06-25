@@ -9,7 +9,6 @@ import com.shs.service.entity.SupplyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
@@ -24,14 +23,18 @@ import java.util.List;
 @RequestMapping("/modify-clothes")
 public class ModifyClothesController {
 
-    @Autowired
-    private SupplyService supplyService;
+    private final SupplyService supplyService;
+
+    private final ItemStatusService itemStatus;
+
+    private final PushItem pushItem;
 
     @Autowired
-    private ItemStatusService itemStatus;
-
-    @Autowired
-    private PushItem pushItem;
+    public ModifyClothesController(SupplyService supplyService, ItemStatusService itemStatus, PushItem pushItem) {
+        this.supplyService = supplyService;
+        this.itemStatus = itemStatus;
+        this.pushItem = pushItem;
+    }
 
     /**
      * For every request for this controller, this will
@@ -57,7 +60,7 @@ public class ModifyClothesController {
     @RequestMapping(method = RequestMethod.POST)
     public String doPost(Clothes item, RedirectAttributes redirectAttributes) {
         pushItem.pushItem(item);
-        redirectAttributes.addAttribute("itemTypeId", item.getItemType().getItemTypeId());
+        redirectAttributes.addAttribute("itemTypeId", item.getItemType().getId());
         redirectAttributes.addAttribute("type", item.getItemType().getType());
         redirectAttributes.addAttribute("requestKey", "Clothes saved successfully");
         return "redirect:/view-items";

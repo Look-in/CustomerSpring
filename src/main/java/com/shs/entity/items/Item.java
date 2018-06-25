@@ -1,12 +1,15 @@
 package com.shs.entity.items;
 
+import com.shs.entity.orders.Order;
 import com.shs.entity.reference.ItemStatus;
 import com.shs.entity.reference.ItemType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
 
 /**
  * Default entity  - Item
@@ -22,11 +25,11 @@ import javax.validation.constraints.Min;
         @NamedQuery(name = Item.ALL_ITEM_QUERY,
                 query = "select e from Item e"),
         @NamedQuery(name = Item.ITEM_QUERY,
-                query = "select e from Item e WHERE e.itemType.itemTypeId = :id")
+                query = "select e from Item e WHERE e.itemType.id = :id")
 })
 @Data
 @NoArgsConstructor
-public class Item {
+public class Item implements Serializable {
 
     public static final String ITEM_QUERY = "Item.getItem";
 
@@ -35,7 +38,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private Integer itemId;
+    private Integer id;
 
     @Min(value = 0, message = "The value must be positive")
     private Integer price;
@@ -51,6 +54,12 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "item_type_id")
     private ItemType itemType;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "order_item",
+            joinColumns = @JoinColumn(name = "item_id"),
+            inverseJoinColumns = @JoinColumn(name = "order_ID"))
+    private Order order;
 
     public Item(ItemType itemType) {
         this.itemType = itemType;

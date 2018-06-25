@@ -13,7 +13,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="customer" target="1.8" />
-      <module name="sshwa" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

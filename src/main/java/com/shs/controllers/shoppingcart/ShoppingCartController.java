@@ -25,11 +25,15 @@ import java.util.List;
 @RequestMapping("/shopping-cart")
 public class ShoppingCartController {
 
-    @Autowired
-    private ChangeCart changeCart;
+    private final ChangeCart changeCart;
+
+    private final GetCart shoppingCart;
 
     @Autowired
-    private GetCart shoppingCart;
+    public ShoppingCartController(ChangeCart changeCart, GetCart shoppingCart) {
+        this.changeCart = changeCart;
+        this.shoppingCart = shoppingCart;
+    }
 
     /**
      * For every request for this controller, items will

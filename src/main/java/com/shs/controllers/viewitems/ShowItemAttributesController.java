@@ -21,8 +21,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/shopping-cart")
 public class ShowItemAttributesController {
 
+    private final SupplyService supplyService;
+
     @Autowired
-    private SupplyService supplyService;
+    public ShowItemAttributesController(SupplyService supplyService) {
+        this.supplyService = supplyService;
+    }
 
     @RequestMapping(value = "/show-clothes", method = RequestMethod.GET)
     public ModelAndView doShowClothes(@RequestParam Integer itemId) {

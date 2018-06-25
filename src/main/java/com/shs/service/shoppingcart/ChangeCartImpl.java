@@ -1,14 +1,17 @@
 package com.shs.service.shoppingcart;
 
-import com.shs.dao.order.PutShoppingCartDao;
+import com.shs.dao.order.OrderDao;
 import com.shs.dao.reference.OrderStatusDao;
-import com.shs.dao.supply.ReadItemDao;
+import com.shs.dao.entity.ItemDao;
+import com.shs.entity.items.Item;
 import com.shs.entity.orders.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Implements methods for managing user orders.
@@ -19,20 +22,24 @@ import javax.transaction.Transactional;
 @Transactional
 public class ChangeCartImpl implements ChangeCart {
 
-    @Autowired
-    private PutShoppingCartDao shoppingCart;
+    private final ItemDao itemDao;
+
+    private final OrderDao orderDao;
+
+    private final OrderStatusDao orderStatusDao;
 
     @Autowired
-    private OrderStatusDao orderStatus;
-
-
-    @Autowired
-    @Qualifier("ItemDao")
-    private ReadItemDao readItemDao;
+    public ChangeCartImpl(OrderDao orderDao, @Qualifier("ItemDao") ItemDao itemDao, OrderStatusDao orderStatusDao) {
+        this.orderDao = orderDao;
+        this.itemDao = itemDao;
+        this.orderStatusDao = orderStatusDao;
+    }
 
     @Override
     public void putOrder(String user, Order order) {
-        shoppingCart.putOrder(order);
+        Item item = (Item) itemDao.read(4);
+        Order oldOrder = orderDao.readOrder(4, item);
+        //orderDao.create(order);
         ShoppingCart.shoppingCart.remove(user);
     }
 
@@ -41,12 +48,17 @@ public class ChangeCartImpl implements ChangeCart {
      * else add new item to existing order.
      */
     @Override
+    @SuppressWarnings("unchecked")
     public void addShoppingCartNewItem(String user, int itemId) {
+        Item item = (Item) itemDao.read(itemId);
         if (ShoppingCart.shoppingCart.get(user) == null) {
-            ShoppingCart.shoppingCart.put(user, new Order(user, readItemDao.readItem(itemId),
-                    orderStatus.readOrderStatus(1)));
+            Order order = new Order();
+            order.setUsername(user);
+            order.setOrderStatus(orderStatusDao.read(1));
+            order.setItems(new ArrayList<>(Collections.singletonList(item)));
+            ShoppingCart.shoppingCart.put(user, order);
         } else {
-            ShoppingCart.shoppingCart.get(user).addItem(readItemDao.readItem(itemId));
+            ShoppingCart.shoppingCart.get(user).getItems().add(item);
         }
     }
 }

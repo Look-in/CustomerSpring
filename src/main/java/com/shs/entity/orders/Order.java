@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,44 +21,26 @@ import java.util.List;
         @NamedQuery(name = Order.ALL_ORDER_QUERY,
                 query = "select e from Order e WHERE e.username = :username"),
         @NamedQuery(name = Order.ORDER_QUERY,
-                query = "select e from Order e WHERE e.OrderId = :id")
+                query = "select e from Order e WHERE e.id = :id")
 })
 @Data
 @NoArgsConstructor
-public class Order {
+public class Order implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     public static final String ORDER_QUERY = "Order.getOrder";
 
     public static final String ALL_ORDER_QUERY = "Order.getAllOrders";
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Integer OrderId;
-
     @ManyToOne
     @JoinColumn(name = "order_status_id")
     private OrderStatus orderStatus;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "order_item",
-            joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "item_ID"))
+    @OneToMany(mappedBy = "order")
     private List<Item> items = new LinkedList<>();
 
     private String username;
-
-    public Order(String username, Item item, OrderStatus orderStatus) {
-        items.add(item);
-        this.username = username;
-        this.orderStatus = orderStatus;
-    }
-
-    public void addItem(Item item) {
-        items.add(item);
-    }
-
-    public void removeItem(Item item) {
-        items.remove(item);
-    }
 }

@@ -17,8 +17,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/delete")
 public class DeleteItemController {
 
+    private final PushItem pushItem;
+
     @Autowired
-    private PushItem pushItem;
+    public DeleteItemController(PushItem pushItem) {
+        this.pushItem = pushItem;
+    }
 
     @RequestMapping(method = RequestMethod.POST)
     public String doDelete(@RequestParam Integer itemId,

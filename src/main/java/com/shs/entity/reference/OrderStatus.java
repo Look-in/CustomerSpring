@@ -1,13 +1,9 @@
 package com.shs.entity.reference;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Reference Order Status.
@@ -17,13 +13,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = ("ORDER_STATUS"))
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class OrderStatus {
+public class OrderStatus implements Serializable {
 
     @Id
-    @Column(name = "ID")
-    private int orderStatusId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String status;
 

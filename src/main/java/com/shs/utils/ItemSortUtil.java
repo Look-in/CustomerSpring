@@ -28,7 +28,7 @@ public class ItemSortUtil {
                 Collections.sort(item, (o1, o2) -> (o1.getName().compareToIgnoreCase(o2.getName())));
                 break;
             case STATUS:
-                Collections.sort(item, (o1, o2) -> (o1.getItemStatus().getItemStatusId() - o2.getItemStatus().getItemStatusId()));
+                Collections.sort(item, (o1, o2) -> (o1.getItemStatus().getId() - o2.getItemStatus().getId()));
                 break;
         }
     }

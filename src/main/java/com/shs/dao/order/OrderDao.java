@@ -1,5 +1,7 @@
 package com.shs.dao.order;
 
+import com.shs.dao.supply.CrudDao;
+import com.shs.entity.items.Item;
 import com.shs.entity.orders.Order;
 
 import java.util.List;
@@ -9,12 +11,12 @@ import java.util.List;
  *
  * @author Serg Shankunas <shserg2012@gmail.com>
  */
-public interface ReadShoppingCartDao {
+public interface OrderDao extends CrudDao<Integer, Order> {
 
     /**
      * Reading order attributes by Id (in developing).
      */
-    Order readOrder(int orderId);
+    Order readOrder(int orderId, Item item);
 
     /**
      * Reading list of customer orders by Username.

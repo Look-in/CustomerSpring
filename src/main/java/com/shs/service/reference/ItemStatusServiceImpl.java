@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 public class ItemStatusServiceImpl implements ItemStatusService {
 
+    private final ItemStatusDao itemStatusDao;
+
     @Autowired
-    private ItemStatusDao itemStatusDao;
+    public ItemStatusServiceImpl(ItemStatusDao itemStatusDao) {
+        this.itemStatusDao = itemStatusDao;
+    }
 
     @Override
     public List<ItemStatus> readItemStatuses() {
@@ -20,6 +24,6 @@ public class ItemStatusServiceImpl implements ItemStatusService {
 
     @Override
     public ItemStatus readItemStatus(int itemStatusId) {
-        return itemStatusDao.readItemStatus(itemStatusId);
+        return itemStatusDao.read(itemStatusId);
     }
 }

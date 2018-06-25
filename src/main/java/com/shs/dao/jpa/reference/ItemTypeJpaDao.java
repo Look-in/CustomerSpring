@@ -5,6 +5,7 @@ import com.shs.dao.reference.ItemTypeDao;
 import com.shs.entity.reference.ItemType;
 import org.springframework.stereotype.Repository;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -13,16 +14,11 @@ import java.util.List;
  * @author Serg Shankunas <shserg2012@gmail.com>
  */
 @Repository
-public class ItemTypeJpaDao extends BaseJpaDao implements ItemTypeDao {
+public class ItemTypeJpaDao extends BaseJpaDao<Integer, ItemType> implements ItemTypeDao {
 
     @Override
     @SuppressWarnings("unchecked")
     public List<ItemType> readItemTypes() {
-        return getEntityManager().createQuery("select e from ItemType e").getResultList();
-    }
-
-    @Override
-    public ItemType readItemType(int itemTypeId) {
-        return getEntityManager().find(ItemType.class, itemTypeId);
+        return getSession().createQuery("select e from ItemType e").list();
     }
 }

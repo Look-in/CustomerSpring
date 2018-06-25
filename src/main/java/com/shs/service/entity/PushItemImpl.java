@@ -1,6 +1,8 @@
 package com.shs.service.entity;
 
-import com.shs.dao.supply.ChangeItemDao;
+import com.shs.dao.entity.ItemDao;
+import com.shs.dao.jpa.entity.ClothesJpaDao;
+import com.shs.dao.supply.CrudDao;
 import com.shs.entity.items.Bicycle;
 import com.shs.entity.items.Clothes;
 import com.shs.entity.items.Item;
@@ -8,35 +10,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-
 /**
  * <code>Service</code> Implements methods for changing items.
  *
  * @author Serg Shankunas
  */
 @Service
-@Transactional
 public class PushItemImpl implements PushItem {
 
-    @Autowired
-    @Qualifier("ClothesDao")
-    private ChangeItemDao pushClothes;
+    private final ItemDao pushClothes;
+
+    private final ItemDao pushBicycle;
+
+    private final ItemDao pushDefaultItem;
 
     @Autowired
-    @Qualifier("BicycleDao")
-    private ChangeItemDao pushBicycle;
-
-    @Autowired
-    @Qualifier("ItemDao")
-    private ChangeItemDao pushDefaultItem;
+    public PushItemImpl(@Qualifier("ClothesDao") ItemDao pushClothes, @Qualifier("BicycleDao") ItemDao pushBicycle, @Qualifier("ItemDao") ItemDao pushDefaultItem) {
+        this.pushClothes = pushClothes;
+        this.pushBicycle = pushBicycle;
+        this.pushDefaultItem = pushDefaultItem;
+    }
 
     /**
      * Factory method for changing Item by ItemClass
      */
     @Override
+    @SuppressWarnings("unchecked")
     public void pushItem(Item item) {
-        ChangeItemDao push;
+        CrudDao push;
         if (item instanceof Bicycle) {
             push = pushBicycle;
         } else {
@@ -46,7 +47,7 @@ public class PushItemImpl implements PushItem {
                 push = pushDefaultItem;
             }
         }
-        if (item.getItemId() == null) {
+        if (item.getId() == null) {
             push.create(item);
         } else {
             push.update(item);

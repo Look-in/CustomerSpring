@@ -1,6 +1,6 @@
 package com.shs.service.shoppingcart;
 
-import com.shs.dao.order.ReadShoppingCartDao;
+import com.shs.dao.order.OrderDao;
 import com.shs.entity.orders.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,12 @@ import java.util.List;
 @Service
 public class getCartImpl implements GetCart {
 
+    private final OrderDao readShoppingCartDao;
+
     @Autowired
-    private ReadShoppingCartDao readShoppingCartDao;
+    public getCartImpl(OrderDao readShoppingCartDao) {
+        this.readShoppingCartDao = readShoppingCartDao;
+    }
 
     @Override
     public Order readOrder(int orderId) {

@@ -2,11 +2,11 @@ package com.shs.entity.items;
 
 import com.shs.entity.reference.ItemType;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Entity Bicycle extends Item and has a joined table DB stucture
@@ -14,11 +14,22 @@ import javax.persistence.PrimaryKeyJoinColumn;
  *
  * @author Serg Shankunas <shserg2012@gmail.com>
  */
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @PrimaryKeyJoinColumn(name = "id")
 @Data
 @NoArgsConstructor
-public class Bicycle extends Item {
+@NamedQueries({
+        @NamedQuery(name = Bicycle.ALL_BICYCLE_QUERY,
+                query = "select e from Bicycle e"),
+        @NamedQuery(name = Bicycle.BICYCLE_QUERY,
+                query = "select e from Bicycle e WHERE e.itemType.id = :id")
+})
+public class Bicycle extends Item implements Serializable {
+
+    public static final String BICYCLE_QUERY = "Item.getBicycles";
+
+    public static final String ALL_BICYCLE_QUERY = "Item.getAllBicycles";
 
     private String fork;
 

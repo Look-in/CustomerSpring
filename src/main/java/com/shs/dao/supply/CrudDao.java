@@ -2,12 +2,16 @@ package com.shs.dao.supply;
 
 import com.shs.entity.items.Item;
 
+import java.io.Serializable;
+
 /**
  * <code>DAO</code> For change items.
  *
  * @author Serg Shankunas
  */
-public interface ChangeItemDao<T extends Item> {
+public interface CrudDao<K, T extends Serializable> {
+
+    T read(K id);
 
     /**
      * Adding item.
@@ -28,7 +32,7 @@ public interface ChangeItemDao<T extends Item> {
      *
      * @param id item {@link Item}
      */
-    void delete(int id);
+    void delete(K id);
 }
 
 
